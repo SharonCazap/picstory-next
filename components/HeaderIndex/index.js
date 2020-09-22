@@ -4,20 +4,29 @@ import { HeaderContainer, Container, Logo, Accion, User, Write, UserImage } from
 
 import { Wrapper, Boton } from '../../components';
 
-const HeaderIndex = (props) => {
+const HeaderIndex = ({ user, loading }) => {
   return (
     <HeaderContainer>
       <Wrapper>
         <Container>
           <Logo>
             <Link href={'/'}>
-              <img src='./images/logo.png' alt='Picstory'/>
+              <img src='./images/logo.png' alt='Picstory' />
             </Link>
           </Logo>
-          <Accion>
-            <Boton href={"/api/login"} backgroundColor={false} borderColor={true} colorText={true}> Iniciar sesión </Boton>
-            <Boton href={'login'} backgroundColor={true} borderColor={true} colorText={false}> Registrarse </Boton>
-          </Accion>
+          {!loading &&
+            (user ? (
+              <>
+                <a href={'/api/logout'}>LogOut</a>
+              </>
+            ) : (
+              <Accion>
+                <Boton href={'/api/login'} backgroundColor={false} borderColor={true} colorText={true}> Iniciar sesi&oacute;n </Boton>
+                <Boton href={'/api/login'} backgroundColor={true} borderColor={true} colorText={false}> Registrarse </Boton>
+              </Accion>
+              )
+            )
+          }
         </Container>
       </Wrapper>
     </HeaderContainer>

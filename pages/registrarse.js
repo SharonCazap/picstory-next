@@ -1,13 +1,13 @@
 import React from "react";
 // import { jsxAttribute } from "@babel/types"
 
-import { LayoutIndex, Registrarse as RegistrarseContainer } from '../containers';
+import { Layout, Registrarse as RegistrarseContainer } from '../containers';
 
 function Registrarse() {
   return (
-    <LayoutIndex>
+    <Layout>
       <RegistrarseContainer />
-    </LayoutIndex>
+    </Layout>
   )
 }
 

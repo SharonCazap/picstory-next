@@ -9,7 +9,7 @@ export const WrapperContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   @media (min-width: ${breakpoints.mobileGrande}) {
-    max-width: 400px;
+    max-width: 420px;
     width: 100%;
   }
   @media (min-width: ${breakpoints.tablet}) {
@@ -18,7 +18,7 @@ export const WrapperContainer = styled.div`
   }
 
   @media (min-width: ${breakpoints.laptop}) {
-    max-width: 850px;
+    max-width: 900px;
     width: 100%;
   }
 
@@ -27,7 +27,7 @@ export const WrapperContainer = styled.div`
     width: 100%;
   }
   @media (min-width: ${breakpoints.notebook}) {
-    max-width: 1440px;
+    max-width: 1400px;
     width: 100%;
   }
 `;

@@ -36,10 +36,13 @@ export const Accion = styled.div`
   display: flex;
   width: 70%;
   align-items: center;
-  justify-content: space-between; 
+  justify-content: flex-end; 
   a{
     font-size: 14px;
     padding: 10px 30px;
+  }
+  a:first-of-type{
+      margin-right: 10px;
   }
   @media (min-width: ${breakpoints.mobileGrande}) {
     
@@ -48,7 +51,6 @@ export const Accion = styled.div`
     
   }
   @media (min-width: ${breakpoints.laptop}) {
-    width: 22%;
     a{
       font-size: 16px;
     }

@@ -1,13 +1,13 @@
 import React from "react";
 // import { jsxAttribute } from "@babel/types"
 
-import { LayoutIndex, LogIn as LogInContainer } from '../containers';
+import { Layout, LogIn as LogInContainer } from '../containers';
 
 function LogIn() {
   return (
-    <LayoutIndex>
+    <Layout>
       <LogInContainer />
-    </LayoutIndex>
+    </Layout>
   )
 }
 

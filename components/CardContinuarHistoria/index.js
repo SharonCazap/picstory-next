@@ -5,7 +5,7 @@ import { Card, Info } from './styled';
 
 const CardContinuarHistoria = ( props ) => {
   return (
-    <Card>
+    <Card href={props.href}>
       <figure>
         <img src={props.image} alt={props.alt}/>
       </figure>

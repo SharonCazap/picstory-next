@@ -113,6 +113,7 @@ function HomeContainer() {
             <Ilustracion image={'./images/ilustracionHistorias.png'} alt={'imageHistoriaContinuar'}/>
             <SeguirEscribiendo>
               <CardContinuarHistoria
+                href={'continuar'}
                 image={'./images/placeholderHistoria.png'}
                 alt={'imageHistoria'}
                 tituloHistoria={'Algún día te encontraré'}
@@ -120,7 +121,7 @@ function HomeContainer() {
                 fecha={'hace 3 días'}
               />
               <Accion>
-                <Boton backgroundColor={false} borderColor={true} colorText={true}> Continuar </Boton>
+                <Boton href={'continuar'} backgroundColor={false} borderColor={true} colorText={true}> Continuar </Boton>
               </Accion>
             </SeguirEscribiendo>
           </ContinuarHistoria>
@@ -131,135 +132,5 @@ function HomeContainer() {
     </ContainerMain>
   );
 }
-// class HomeContainer extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       images: []
-//     }
-//   }
-
-//   componentDidMount() {
-//     this.fetchImages()
-//   }
-
-//   async fetchImages() {
-//     try {
-//       const response = await fetch(`https://pixabay.com/api/?key=6683953-b49e41bfa4dd17cb95038d82b`);
-//       if (!response.ok) {
-//         throw Error(response.statusText);
-//       }
-//       const json = await response.json();
-//       console.log(json);
-//       this.setState({
-//         images: json.hits
-//       });
-
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   }
-
-//   render() {
-//     const { images } = this.state;
-//     console.log('images:' + images);
-
-//     // console.log('imgDestacada: ' + imgDestacada);
-//     return (
-//       <ContainerMain>
-//         <Banner>
-//           <h1>Inspirate, creá tus propias historias y compartilas con la comunidad</h1>
-//         </Banner>
-//         <Wrapper>
-//           <Container>
-//             <Historias>
-//               <Titulo>
-//                 Historias que iluminan
-//               </Titulo>
-//               <CardLeerHistoria
-//                 image={'./images/history01.jpg'}
-//                 tituloHistoria={'Sin fin de viajes en el subte D'}
-//                 sinopsis={'Todas las mañanas me subía al subte D, sin destino alguno, pero con una meta por alcanzar. Recopilar la mayor...'}
-//                 autor={'Tatiana Numerosky'}
-//               />
-//               <CardLeerHistoria
-//                 image={'./images/history01.jpg'}
-//                 tituloHistoria={'Sin fin de viajes en el subte D'}
-//                 sinopsis={'Todas las mañanas me subía al subte D, sin destino alguno, pero con una meta por alcanzar. Recopilar la mayor...'}
-//                 autor={'Tatiana Numerosky'}
-//               />
-//               <CardLeerHistoria
-//                 image={'./images/history01.jpg'}
-//                 tituloHistoria={'Sin fin de viajes en el subte D'}
-//                 sinopsis={'Todas las mañanas me subía al subte D, sin destino alguno, pero con una meta por alcanzar. Recopilar la mayor...'}
-//                 autor={'Tatiana Numerosky'}
-//               />
-//               <CardLeerHistoria
-//                 image={'./images/history01.jpg'}
-//                 tituloHistoria={'Sin fin de viajes en el subte D'}
-//                 sinopsis={'Todas las mañanas me subía al subte D, sin destino alguno, pero con una meta por alcanzar. Recopilar la mayor...'}
-//                 autor={'Tatiana Numerosky'}
-//               />
-//               <CardLeerHistoria
-//                 image={'./images/history01.jpg'}
-//                 tituloHistoria={'Sin fin de viajes en el subte D'}
-//                 sinopsis={'Todas las mañanas me subía al subte D, sin destino alguno, pero con una meta por alcanzar. Recopilar la mayor...'}
-//                 autor={'Tatiana Numerosky'}
-//               />
-//               <CardLeerHistoria
-//                 image={'./images/history01.jpg'}
-//                 tituloHistoria={'Sin fin de viajes en el subte D'}
-//                 sinopsis={'Todas las mañanas me subía al subte D, sin destino alguno, pero con una meta por alcanzar. Recopilar la mayor...'}
-//                 autor={'Tatiana Numerosky'}
-//               />
-//               <Accion>
-//                 <Boton backgroundColor={true} borderColor={false} colorText={false}> Leer más </Boton>
-//               </Accion>
-//             </Historias>
-//             <Imagenes>
-//               <Titulo>
-//                 Im&aacute;genes que inspiran
-//               </Titulo>
-//               {
-//                 images.slice(0,6).map(img => {
-//                   return (
-//                     <ImagenHome key={img.id}> 
-//                       <img src={img.largeImageURL} alt={img.tags}/>
-//                     </ImagenHome>
-//                   )
-//                 })
-//               }
-//               <Accion>
-//                 <Boton backgroundColor={true} borderColor={false} colorText={false}> Leer más </Boton>
-//               </Accion>
-//             </Imagenes>
-//           </Container>
-//           <Container>
-//             <ContinuarHistoria>
-//               <Titulo>
-//                 Continuá donde dejaste
-//             </Titulo>
-//               <h5>Termina de escribir la historia y publicala.</h5>
-//               <Ilustracion image={'./images/ilustracionHistorias.png'} />
-//               <SeguirEscribiendo>
-//                 <CardContinuarHistoria
-//                   image={'./images/placeholderHistoria.png'}
-//                   tituloHistoria={'Algún día te encontraré'}
-//                   sinopsis={'Todas las mañanas me subía al subte D, sin destino alguno, pero con una meta por alcanzar. Recopilar la mayor...'}
-//                   fecha={'hace 3 días'}
-//                 />
-//                 <Accion>
-//                   <Boton backgroundColor={false} borderColor={true} colorText={true}> Continuar </Boton>
-//                 </Accion>
-//               </SeguirEscribiendo>
-//             </ContinuarHistoria>
-//           </Container>
-
-//         </Wrapper>
-
-//       </ContainerMain>
-//     );
-//   }
-// }
 
 export default HomeContainer;

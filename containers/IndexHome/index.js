@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ContainerMain, Banner, Container, Imagenes, ImagenesInfo, Accion, HrHome, Espacio, EspacioInfo } from './styles';
+import { ContainerMain, Banner, Container, ImagenesInfo, Accion, HrHome, Espacio, EspacioInfo } from './styles';
 import { Wrapper, Boton, Ilustracion, Titulo } from '../../components';
 
 function IndexContainer() {
@@ -12,7 +12,6 @@ function IndexContainer() {
       </Banner>
       <Wrapper>
         <Container>
-          <Imagenes>
             <ImagenesInfo>
               <h2>Una imagen.<br />Miles de historias.</h2>
               <div>
@@ -27,16 +26,15 @@ function IndexContainer() {
                   <Boton href={'login'} backgroundColor={true} borderColor={false} colorText={false}> Empezar a escribir </Boton>
                 </Accion>
               </div>
+              <Ilustracion image={'./images/imageHome.png'} alt={'imageHistorias'} />
             </ImagenesInfo>
-            <img src='./images/imageHome.png' alt='imageHome' />
-          </Imagenes>
         </Container>
         </Wrapper>
         <Container>
           <HrHome>
-          <Titulo>Inspirate</Titulo>
-          <Titulo>Escribí</Titulo>
-          <Titulo>Compartí</Titulo>
+            <Titulo>Inspirate</Titulo>
+            <Titulo>Escribí</Titulo>
+            <Titulo>Compartí</Titulo>
           </HrHome>
         </Container>
         <Wrapper>
@@ -57,7 +55,6 @@ function IndexContainer() {
               </div>
             </EspacioInfo>
           </Espacio>
-
         </Container>
       </Wrapper>
     </ContainerMain>

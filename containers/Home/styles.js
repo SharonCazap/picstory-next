@@ -6,32 +6,43 @@ export const ContainerMain = styled.main`
 `;
 export const Banner = styled.div`
   background-color: ${leerColor(colores.amarilloDos)};
-  background-image: url('../images/bannerHome.png');
-  background-position: center;
-  background-repeat: no-repeat;
+  background-image: none;
   width: 100%;
-  height: 29vh;
+  height: 10vh;
   display: flex;
   align-items: center;
   justify-content: center;
   h1{
     color: ${leerColor(colores.violeta)};
+    font-size: 21px;
     font-family: 'Lora', serif;
     font-weight: 700;
     text-align: center;
-    width: 30%;
+    width: 90%;
   }
   @media (min-width: ${breakpoints.mobileGrande}) {
-    
+    h1{
+      width: 60%;
+    }
   }
   @media (min-width: ${breakpoints.tablet}) {
-    
+    background-size: contain;
+    background-image: url('../images/bannerHome.png');
+    background-position: center;
+    background-repeat: no-repeat;  
+    height: 20vh;
   }
   @media (min-width: ${breakpoints.laptop}) {
-
+    h1{
+      font-size: 32px;
+    } 
+    height: 29vh;
   }
   @media (min-width: ${breakpoints.laptopL}) {
-    
+    h1{
+      font-size: 36px;
+      width: 42%;
+    }
   }
   @media (min-width: ${breakpoints.notebook}) {
 
@@ -39,13 +50,29 @@ export const Banner = styled.div`
 `;
 export const Container = styled.div` 
   display: flex; 
-  flex-direction: row; 
+  flex-direction: column; 
   justify-content: space-between;
   width: 100%;
+  @media (min-width: ${breakpoints.mobileGrande}) {
+    
+  }
+  @media (min-width: ${breakpoints.tablet}) {
+
+  }
+  @media (min-width: ${breakpoints.laptop}) {
+    flex-direction: row; 
+    justify-content: space-between;
+  }
+  @media (min-width: ${breakpoints.laptopL}) {
+
+  }
+  @media (min-width: ${breakpoints.notebook}) {
+
+  }
 `;
 export const Historias = styled.div`
-  width: 70%; 
   margin: 40px 0; 
+  width: 100%;
   display: flex; 
   flex-direction: column;
   flex-flow: row wrap;
@@ -55,6 +82,21 @@ export const Historias = styled.div`
     width: 100%; 
     margin-bottom: 40px;
   }
+  @media (min-width: ${breakpoints.mobileGrande}) {
+
+  }
+  @media (min-width: ${breakpoints.tablet}) {
+
+  }
+  @media (min-width: ${breakpoints.laptop}) {
+    width: 60%;
+  }
+  @media (min-width: ${breakpoints.laptopL}) {
+    width: 70%;
+  }
+  @media (min-width: ${breakpoints.notebook}) {
+
+  }
 `;
 export const Accion = styled.div` 
   display: flex;
@@ -63,16 +105,32 @@ export const Accion = styled.div`
   margin: 50px auto 0;
 `;
 export const Imagenes = styled.div`
-  width: 25%; 
   margin: 40px 0; 
   display: flex; 
+  width: 100%;
   flex-direction: column; 
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: baseline;
   h2{
     width: 100%; 
     margin-bottom: 40px;
+  }
+  @media (min-width: ${breakpoints.mobileGrande}) {
+
+  }
+  @media (min-width: ${breakpoints.tablet}) {
+
+  }
+  @media (min-width: ${breakpoints.laptop}) {
+    width: 35%;
+  }
+  @media (min-width: ${breakpoints.laptopL}) {
+    width: 25%;
+    justify-content: space-between;
+  }
+  @media (min-width: ${breakpoints.notebook}) {
+
   }
 `;
 export const ImagenHome = styled.div`
@@ -85,6 +143,25 @@ export const ImagenHome = styled.div`
     height: inherit;
     object-fit: cover;
   }
+  @media (min-width: ${breakpoints.mobileGrande}) {
+    width: 200px;
+    height: 200px;
+  }
+  @media (min-width: ${breakpoints.tablet}) {
+
+  }
+  @media (min-width: ${breakpoints.laptop}) {
+    width: 200px;
+    height: 200px; 
+  }
+  @media (min-width: ${breakpoints.laptopL}) {
+    width: 145px;
+    height: 145px;
+  }
+  @media (min-width: ${breakpoints.notebook}) {
+    width: 170px;
+    height: 170px;
+  }
 `;
 export const ContinuarHistoria = styled.div` 
   width: 100%; 
@@ -93,7 +170,7 @@ export const ContinuarHistoria = styled.div`
   flex-flow: row wrap; 
   justify-content: space-around;
   align-items: center; 
-  margin: 40px 0 60px; 
+  margin-bottom: 60px; 
   h2{
     width: 100%; 
     margin-bottom: 25px;
@@ -102,11 +179,17 @@ export const ContinuarHistoria = styled.div`
     width: 100%;
     font-size: 18px; 
     font-weight: 300;
-    margin-bottom: 50px;
+    margin: 0 0 40px;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
   }
-`; 
+  div:first-of-type{
+
+  }
+  div:nth-child(3){
+    width: 50%;
+  }
+`;
 export const SeguirEscribiendo = styled.div` 
   display: flex; 
   flex-direction: column;

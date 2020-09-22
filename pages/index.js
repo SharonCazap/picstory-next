@@ -1,13 +1,13 @@
 import React from "react";
 // import { jsxAttribute } from "@babel/types"
 
-import { LayoutIndex, IndexHome as IndexContainer } from '../containers';
+import { Layout, IndexHome as IndexContainer } from '../containers';
 
 function Index() {
   return (
-    <LayoutIndex>
+    <Layout>
       <IndexContainer />
-    </LayoutIndex>
+    </Layout>
   )
 }
 

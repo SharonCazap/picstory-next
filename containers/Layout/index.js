@@ -1,13 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Header, Footer } from '../../components';
+import { useFetchUser } from '../../lib/user';
+
+import { HeaderIndex, Footer } from '../../components';
 import { ContainerBody } from './styles';
 
 function Layout({ children }) {
+  const { user, loading } = useFetchUser();
+  console.log('user: ' + user);
+  
   return (
     <ContainerBody>
-      <Header /> 
+      <HeaderIndex user={user} loading={loading} /> 
         {children}
       <Footer/>
     </ContainerBody>

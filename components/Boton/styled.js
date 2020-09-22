@@ -29,4 +29,19 @@ export const BotonAccion = styled.a`
         margin: 0;
       }
     `} */
+  @media (min-width: ${breakpoints.mobileGrande}) {
+
+  }
+  @media (min-width: ${breakpoints.tablet}) {
+    
+  }
+  @media (min-width: ${breakpoints.laptop}) {
+    padding: 10px 45px;
+  }
+  @media (min-width: ${breakpoints.laptopL}) {
+    
+  }
+  @media (min-width: ${breakpoints.notebook}) {
+
+  }
 `;

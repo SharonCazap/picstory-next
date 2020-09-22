@@ -7,18 +7,18 @@ export const ContainerMain = styled.main`
 export const Banner = styled.div`
   background-color: ${leerColor(colores.blanco)};
   width: 100%;
-  height: 20vh;
+  height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   h1{
     color: ${leerColor(colores.violeta)};
-    font-size: 24px;
+    font-size: 21px;
     font-family: 'Lora', serif;
     font-weight: 700;
     text-align: center;
-    width: 100%;
+    width: 90%;
   }
   @media (min-width: ${breakpoints.mobileGrande}) {
     width: 80%;
@@ -28,12 +28,18 @@ export const Banner = styled.div`
 
   }
   @media (min-width: ${breakpoints.laptop}) {
-    font-size: 36px;
-    width: 42%;
-    height: 29vh;
+    h1{
+      font-size: 32px;
+    }
+    width: 60%;
+    height: 12vh;
   }
   @media (min-width: ${breakpoints.laptopL}) {
-    
+    h1{
+      font-size: 36px;
+    }
+    width: 50%;
+    height: 15vh;
   }
   @media (min-width: ${breakpoints.notebook}) {
 
@@ -45,14 +51,14 @@ export const Container = styled.div`
   justify-content: space-between;
   width: 100%;
 `;
-
-export const Imagenes = styled.div`
-  width: 100%; 
-  margin: 40px 0; 
+export const ImagenesInfo = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  align-items: center; 
+  justify-content: space-between;
+  flex-flow: row wrap;  
   h2{
+    display: block;
     width: 100%; 
     font-size: 21px;
     font-family: 'Lora', serif;
@@ -60,61 +66,54 @@ export const Imagenes = styled.div`
     color: ${leerColor(colores.violeta)};
     margin-bottom: 40px;
   }
-  img{
-    width: 70%;
-    border-radius: 20px;
-  }
-  @media (min-width: ${breakpoints.mobileGrande}) {
-    
-  }
-  @media (min-width: ${breakpoints.tablet}) {
-    
-  }
-  @media (min-width: ${breakpoints.laptop}) {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    h2{
-      font-size: 32px;
-    }
-    img{
-      width: 40%;
-    }
-  }
-  @media (min-width: ${breakpoints.laptopL}) {
-    
-  }
-  @media (min-width: ${breakpoints.notebook}) {
-
-  }
-`;
-export const ImagenesInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;    
-  div{
-    width: 70%;
-  }
   p{
     background-color: ${leerColor(colores.lila3)};
     color: ${leerColor(colores.gris)};
     border-radius: 20px;
     padding: 40px 30px;
-    font-size: 21px;
+    font-size: 18px;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
+  }
+  img{
+    border-radius: 20px;
   }
   @media (min-width: ${breakpoints.mobileGrande}) {
     
   }
   @media (min-width: ${breakpoints.tablet}) {
-    
+    div{
+      width: auto;
+    }
+    div:nth-of-type(2){
+      width: 100%;
+      justify-content: center;
+    }
   }
   @media (min-width: ${breakpoints.laptop}) {
-    width: 65%;
+    h2{
+      font-size: 28px;
+    }
+    div:first-of-type{
+      width: 50%;
+    }
+    div:nth-of-type(2){
+      width: 50%;
+      figure{
+        padding: 0 5% 0;
+      }
+    }
   }
   @media (min-width: ${breakpoints.laptopL}) {
-    
+    div:first-of-type{
+      width: 50%;
+    }
+    div:nth-of-type(2){
+      width: auto;
+      figure{
+        padding: 0;
+      }
+    }
   }
   @media (min-width: ${breakpoints.notebook}) {
 
@@ -126,13 +125,6 @@ export const Accion = styled.div`
   justify-content: space-evenly;
   margin: 50px auto 0;
 `;
-export const Espacio = styled.div` 
-  width: 100%;
-  margin: 40px 0;
-  display: flex;
-  align-items: center;
-  
-`;
 export const HrHome = styled.div` 
   background-image: url('../images/hrHome.png');
   background-position: center;
@@ -141,7 +133,7 @@ export const HrHome = styled.div`
   height: 15vh;
   display: flex;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-evenly;
   @media (min-width: ${breakpoints.mobileGrande}) {
     
@@ -151,7 +143,29 @@ export const HrHome = styled.div`
   }
   @media (min-width: ${breakpoints.laptop}) {
     height: 29vh;
+  }
+  @media (min-width: ${breakpoints.laptopL}) {
+    
+  }
+  @media (min-width: ${breakpoints.notebook}) {
+
+  }
+`;
+export const Espacio = styled.div` 
+  width: 100%;
+  margin: 40px 0;
+  display: flex;
+  align-items: center;
+  @media (min-width: ${breakpoints.mobileGrande}) {
+    
+  }
+  @media (min-width: ${breakpoints.tablet}) {
     flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  @media (min-width: ${breakpoints.laptop}) {
+
   }
   @media (min-width: ${breakpoints.laptopL}) {
     
@@ -182,7 +196,7 @@ export const EspacioInfo = styled.div`
     color: ${leerColor(colores.gris)};
     border-radius: 20px;
     padding: 40px 30px;
-    font-size: 21px;
+    font-size: 18px;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
   } 
@@ -190,11 +204,18 @@ export const EspacioInfo = styled.div`
     
   }
   @media (min-width: ${breakpoints.tablet}) {
-    
+    div:first-of-type{
+      width: 100%;
+      justify-content: center;
+    }
   }
   @media (min-width: ${breakpoints.laptop}) {
     h2{
-      font-size: 32px;
+      font-size: 28px;
+    }
+    div:first-of-type{
+      width: 50%;
+      justify-content: center;
     }
     div:nth-child(3){
       width: 50%;
