@@ -32,6 +32,29 @@ export const Logo = styled.h1`
 
   }
 `;
+export const User = styled.div`
+  display: flex;
+  width: auto;
+  align-items: center;
+  justify-content: flex-end;
+`;
+export const Write = styled.span`
+  border: 2px solid ${leerColor(colores.rosa)};
+  border-radius: 30px;
+  padding: 10px 25px;
+  margin: 0 10px;
+  cursor: pointer;
+  a{
+    text-decoration: none;  
+    color: ${leerColor(colores.rosa)};
+  }
+`;
+
+export const UserImage = styled.img`
+  width: 5%;
+  border-radius: 50%;
+  border: 3px solid ${leerColor(colores.rosa)};
+`;
 export const Accion = styled.div` 
   display: flex;
   width: 70%;

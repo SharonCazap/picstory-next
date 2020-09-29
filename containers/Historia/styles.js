@@ -46,8 +46,13 @@ export const Autor = styled.div`
   margin: 40px 0; 
   display: flex; 
   justify-content: center;
+  figure{
+    width: 75px;
+    height: 75px;
+    margin: 0;
+  }
   img{
-    width: 3%;
+    width: 100%;
     border-radius: 50%;
     border: 3px solid ${leerColor(colores.rosa)};
   }
@@ -63,12 +68,14 @@ export const AutorDatos = styled.div`
     font-weight: 700;
     font-size: 16px;
     color: ${leerColor(colores.gris)};
+    margin: 0;
   }
   h6{
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     font-size: 16px;
     color: ${leerColor(colores.gris)};
+    margin: 0;
   }
 `;
 export const Historia = styled.div`
@@ -118,7 +125,7 @@ export const Valorar = styled.div`
 export const AutorDescripcion = styled.div`
   display: grid;
   grid-template-columns: 100px 450px 100px;
-  margin: 60px auto;
+  margin: 60px auto 45px;
   justify-items: center;
   img{
     width: 50%;
@@ -140,7 +147,7 @@ export const AutorInfo = styled.div`
     font-size: 21px;
     font-family: 'Lato', sans-serif;
     font-weight: 700;
-    margin-bottom: 15px;
+    margin: 0 0 15px 0;
     color: ${leerColor(colores.gris)};
   }
   p{
@@ -148,6 +155,7 @@ export const AutorInfo = styled.div`
     font-weight: 400;
     font-size: 18px;
     color: ${leerColor(colores.gris)};
+    margin: 0;
   }
 `;
 export const Accion = styled.div` 

@@ -12,7 +12,9 @@ function HistoriaContainer() {
       <Wrapper>
         <Container>
           <Autor>
-            <img src='./images/usuario.jpg' alt='UserImage' />
+            <figure>
+              <img src='./images/usuario.jpg' alt='UserImage' />
+            </figure>
             <AutorDatos>
               <h3>Tatiana Numerosky</h3>
               <h6>15 mayo - <span>8 min</span></h6>
@@ -226,7 +228,7 @@ function HistoriaContainer() {
                 para una buena historia. 
               </p>
             </AutorInfo>
-            <img src='./images/usuario.jpg' alt='UserImage'/>
+            {/* Estrellas */}
           </AutorDescripcion>
           <Accion>
             <Boton href={'lista-historias'} backgroundColor={false} borderColor={true} colorText={true}> Volver a historias </Boton>
