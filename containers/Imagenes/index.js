@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import { ContainerMain, Banner, Container, Imagenes, Imagen, SeguirEscribiendo, Coleccion, Accion } from './styles';
-import { Wrapper, Titulo, Boton, Ilustracion, CardContinuarHistoria } from '../../components';
+import { Wrapper, Titulo, Boton, Ilustracion, CardColeccionImages } from '../../components';
 
 function ImagenesContainer() {
   // const [hasError, setErrors] = useState(false);
@@ -55,11 +55,19 @@ function ImagenesContainer() {
             </Titulo>
             <Ilustracion image={'./images/ilustracionColeccion.png'} />
             <SeguirEscribiendo>
-              <CardContinuarHistoria
-                image={'./images/placeholderHistoria.png'}
-                tituloHistoria={'Algún día te encontraré'}
-                sinopsis={'Todas las mañanas me subía al subte D, sin destino alguno, pero con una meta por alcanzar. Recopilar la mayor...'}
-                fecha={'hace 3 días'}
+              <CardColeccionImages
+                href={'/'}
+                image01={'./images/placeholderHistoria.png'}
+                image02={'./images/placeholderHistoria.png'}
+                image03={'./images/placeholderHistoria.png'}
+                coleccion={'Paisajes'}
+              />
+              <CardColeccionImages
+                href={'/'}
+                image01={'./images/placeholderHistoria.png'}
+                image02={'./images/placeholderHistoria.png'}
+                image03={'./images/placeholderHistoria.png'}
+                coleccion={'Música'}
               />
               <Accion>
                 <Boton backgroundColor={false} borderColor={true} colorText={true}> Agregar </Boton>

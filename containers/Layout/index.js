@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { useFetchUser } from '../../lib/user';
 
-import { HeaderIndex, Footer } from '../../components';
+import { Header, Footer } from '../../components';
 import { ContainerBody } from './styles';
 
 function Layout({ children }) {
@@ -12,7 +12,7 @@ function Layout({ children }) {
   
   return (
     <ContainerBody>
-      <HeaderIndex user={user} loading={loading} /> 
+      <Header user={user} loading={loading} /> 
         {children}
       <Footer/>
     </ContainerBody>

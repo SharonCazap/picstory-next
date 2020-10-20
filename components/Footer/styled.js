@@ -9,8 +9,9 @@ export const Container = styled.footer`
   justify-content: space-between;
   h4{
     color: ${leerColor(colores.gris)};
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 300;
+    margin: 12px 0;
   }
   @media (min-width: ${breakpoints.mobileGrande}) {
 

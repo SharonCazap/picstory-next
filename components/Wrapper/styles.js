@@ -27,7 +27,7 @@ export const WrapperContainer = styled.div`
     width: 100%;
   }
   @media (min-width: ${breakpoints.notebook}) {
-    max-width: 1400px;
+    max-width: 1440px;
     width: 100%;
   }
 `;

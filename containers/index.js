@@ -32,3 +32,6 @@ export { default as MisHistorias } from './MisHistorias';
 
 // -------------- MIS HISTORIA -------------- // 
 export { default as MisHistoriasPublicadas } from './MisHistoriasPublicadas';
+
+// -------------- CONFIGURACION -------------- // 
+export { default as Configuracion } from './Configuracion';

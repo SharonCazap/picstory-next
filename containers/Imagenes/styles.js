@@ -73,13 +73,16 @@ export const Imagen = styled.div`
 export const SeguirEscribiendo = styled.div` 
   display: flex; 
   flex-direction: column;
+  width: 60%;
+  flex-flow: row wrap;
+  justify-content: space-between;
 `;
 export const Coleccion = styled.div` 
   width: 100%; 
   display: flex; 
   flex-direction: column;
   flex-flow: row wrap; 
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center; 
   h2{
     width: 100%; 

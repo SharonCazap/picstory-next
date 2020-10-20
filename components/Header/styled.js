@@ -15,7 +15,7 @@ export const Container = styled.div`
 `;
 export const Logo = styled.h1`
   img{
-    width: 70%;
+    width: 100%;
   }
   @media (min-width: ${breakpoints.mobileGrande}) {
     
@@ -24,7 +24,6 @@ export const Logo = styled.h1`
     
   }
   @media (min-width: ${breakpoints.laptop}) {
-    width: 100%;
   }
   @media (min-width: ${breakpoints.laptopL}) {
     
@@ -38,7 +37,38 @@ export const User = styled.div`
   width: auto;
   align-items: center;
   justify-content: flex-end;
+  ul{
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  ul li{
+    display: flex;
+    width: 50px;
+  }
+  ul a{
+    margin: 5px;
+  }
+  .dropdown{
+    display: flex;
+    border-radius: 15px;
+    flex-direction: column;
+    display: flex;
+    position: absolute;
+    top: 10%;
+    right: 11%;
+    width: auto;
+    z-index: 99;
+    padding: 20px;
+    background-color: ${leerColor(colores.blanco)};
+    box-shadow: 12px 12px 30px 0px rgba(177,178,180,0.2); 
+    color: ${leerColor(colores.gris)};
+  }
+  .dropup{
+    display: none;
+  }
 `;
+
 export const Write = styled.span`
   border: 2px solid ${leerColor(colores.rosa)};
   border-radius: 30px;
@@ -52,7 +82,39 @@ export const Write = styled.span`
 `;
 
 export const UserImage = styled.img`
-  width: 5%;
+  width: 100%;
   border-radius: 50%;
   border: 3px solid ${leerColor(colores.rosa)};
+  cursor: pointer;
+`;
+
+export const Accion = styled.div` 
+  display: flex;
+  width: 70%;
+  align-items: center;
+  justify-content: flex-end; 
+  a{
+    font-size: 14px;
+    padding: 10px 30px;
+  }
+  a:first-of-type{
+    margin-right: 10px;
+  }
+  @media (min-width: ${breakpoints.mobileGrande}) {
+    
+  }
+  @media (min-width: ${breakpoints.tablet}) {
+    
+  }
+  @media (min-width: ${breakpoints.laptop}) {
+    a{
+      font-size: 16px;
+    }
+  }
+  @media (min-width: ${breakpoints.laptopL}) {
+    
+  }
+  @media (min-width: ${breakpoints.notebook}) {
+
+  }
 `;
