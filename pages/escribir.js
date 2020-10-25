@@ -3,10 +3,17 @@ import React from "react";
 
 import { Layout, EscribirHistoria as EscribirHistoriaContainer } from '../containers';
 
+import { addHistoria } from './api/historias/add';
+
 function Escribir() {
+
+  const addOrEditHistoria = (historiaObject) => {
+    addHistoria(historiaObject);
+  }
+  
   return (
     <Layout>
-      <EscribirHistoriaContainer />
+      <EscribirHistoriaContainer addOrEditHistoria={addOrEditHistoria} />
     </Layout>
   )
 }

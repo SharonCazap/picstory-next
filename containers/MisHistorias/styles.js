@@ -47,7 +47,7 @@ export const NavHistorias = styled.div`
   margin: 60px 0;
   ul{
     display: flex; 
-    width: 20%; 
+    width: 25%; 
     justify-content: space-between;
   }
   ul li{

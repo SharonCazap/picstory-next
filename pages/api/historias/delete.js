@@ -6,6 +6,7 @@ export default async (req, res) => {
   if (req.method === 'POST') { //Deberia ser DELETE
     try {
       const { id } = req.body.data;
+      console.log("idddd: " + req.body.data);
       await firebaseDB.ref(`historias/${id}`).remove()
       res.statusCode = 200
       res.json({ status: 'deleted', id })

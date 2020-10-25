@@ -48,9 +48,10 @@ export const Card = styled.a`
 export const Info = styled.div` 
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 70%!important;
   margin: 15px 20px;
   justify-content: space-between; 
+  margin-bottom: 0!important;
   h3{
     font-family: 'Lora', serif;
     font-weight: 700;
@@ -70,5 +71,35 @@ export const Info = styled.div`
     font-weight: bold;
     font-family: 'Lato', sans-serif;
     font-weight: 700;
+  }
+`;
+export const Actions = styled.div` 
+  display: flex;
+  flex-direction: row;
+  width: 100%!important;
+  padding: 0 20px!important;
+  margin-bottom: 20px!important;
+  justify-content: flex-end; 
+  button.editButton {
+    background-image: url('./images/edit.svg');
+    background-size: cover;
+    border: none;
+    background-color: transparent;
+    padding: 10px;
+    margin: 0 10px;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+  }
+  button.deleteButton {
+    background-image: url('./images/delete.svg');
+    background-size: cover;
+    border: none;
+    background-color: transparent;
+    padding: 10px;
+    margin: 0 10px;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
   }
 `;

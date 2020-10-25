@@ -28,28 +28,24 @@ function MisHistoriasContainer() {
               alt={'imageHistoria'}
               tituloHistoria={'Algún día te encontraré'}
               sinopsis={'Todas las mañanas me subía al subte D, sin destino alguno, pero con una meta por alcanzar. Recopilar la mayor...'}
-              fecha={'hace 3 días'}
             />
             <CardContinuarHistoria
               image={'./images/placeholderHistoria.png'}
               alt={'imageHistoria'}
               tituloHistoria={'Algún día te encontraré'}
               sinopsis={'Todas las mañanas me subía al subte D, sin destino alguno, pero con una meta por alcanzar. Recopilar la mayor...'}
-              fecha={'hace 3 días'}
             />
             <CardContinuarHistoria
               image={'./images/placeholderHistoria.png'}
               alt={'imageHistoria'}
               tituloHistoria={'Algún día te encontraré'}
               sinopsis={'Todas las mañanas me subía al subte D, sin destino alguno, pero con una meta por alcanzar. Recopilar la mayor...'}
-              fecha={'hace 3 días'}
             />
             <CardContinuarHistoria
               image={'./images/placeholderHistoria.png'}
               alt={'imageHistoria'}
               tituloHistoria={'Algún día te encontraré'}
               sinopsis={'Todas las mañanas me subía al subte D, sin destino alguno, pero con una meta por alcanzar. Recopilar la mayor...'}
-              fecha={'hace 3 días'}
             />
           </EnProceso>
 

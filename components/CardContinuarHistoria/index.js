@@ -1,7 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 
-import { Card, Info } from './styled';
+import { Card, Info, Actions } from './styled';
 
 const CardContinuarHistoria = ( props ) => {
   return (
@@ -12,8 +12,12 @@ const CardContinuarHistoria = ( props ) => {
       <Info>
         <h3>{props.tituloHistoria}</h3> 
         <p>{props.sinopsis}</p>
-        <span>{props.fecha}</span>
+        <Actions>
+          <button onClick={props.edit} className='editButton'></button>
+          <button onClick={props.delet} className='deleteButton'></button>
+        </Actions>
       </Info>
+      
     </Card>
   )
 }

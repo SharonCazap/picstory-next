@@ -40,6 +40,15 @@ export const Container = styled.div`
   width: 100%;
   margin-bottom: 40px;
   justify-content: space-between;
+  form{
+    width: 100%;
+  }
+`;
+export const FormContent = styled.div` 
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
 `;
 export const EscribirInfo = styled.div`
   display: flex;
@@ -117,4 +126,32 @@ export const Accion = styled.div`
   width: 45%;
   justify-content: space-evenly;
   margin: 50px auto 0;
+  button{
+    cursor: pointer; 
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+    width: fit-content;
+    padding: 10px 52px;
+    border-radius: 30px; 
+    background-color: ${leerColor(colores.rosa)};
+    border: 2px solid transparent;
+    color: ${leerColor(colores.blanco)};
+    @media (min-width: ${breakpoints.mobileGrande}) {
+
+    }
+    @media (min-width: ${breakpoints.tablet}) {
+      
+    }
+    @media (min-width: ${breakpoints.laptop}) {
+      padding: 10px 45px;
+    }
+    @media (min-width: ${breakpoints.laptopL}) {
+      
+    }
+    @media (min-width: ${breakpoints.notebook}) {
+
+    }
+  }
 `;

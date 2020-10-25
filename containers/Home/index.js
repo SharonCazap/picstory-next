@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { firebase } from '../../lib';
+const firebaseDB = firebase.database();
 
 import { ContainerMain, Banner, Container, Historias, Imagenes, ImagenHome, SeguirEscribiendo, ContinuarHistoria, Accion } from './styles';
 import { Wrapper, Titulo, CardLeerHistoria, Boton, Ilustracion, CardContinuarHistoria } from '../../components';
 
 function HomeContainer() {
+
+  // Traigo las images de la API de pixabay //
   // const [hasError, setErrors] = useState(false);
   const [images, setImages] = useState([]);
 
@@ -20,8 +24,28 @@ function HomeContainer() {
       })
   }, []);
 
-  console.log("images " + images);
-  
+  // Traigo las primeras 6 historias de la base de datos //
+  const [historias, setHistorias] = useState([]);
+
+  const getHistorias = async () => {
+    firebaseDB.ref('historias').once('value', (snapshot) => {
+      const historiasArr = [];
+      snapshot.forEach((childSnapshot) => {
+        historiasArr.push({
+          id: childSnapshot.key,
+          ...childSnapshot.val()
+        })
+      })
+      // historiasArr.reverse()
+      console.log("getHistorias: ", historiasArr);
+      setHistorias(historiasArr)
+    })
+  }
+
+  useEffect(() => {
+    getHistorias();
+  }, []);
+
   return (
     <ContainerMain>
       <Banner>
@@ -33,54 +57,18 @@ function HomeContainer() {
             <Titulo>
               Historias que iluminan
             </Titulo>
-            <CardLeerHistoria
-              href={'historia'}
-              image={'./images/history01.jpg'}
-              alt={'imageHistoria'}
-              tituloHistoria={'Sin fin de viajes en el subte D'}
-              sinopsis={'Todas las mañanas me subía al subte D, sin destino alguno, pero con una meta por alcanzar. Recopilar la mayor...'}
-              autor={'Tatiana Numerosky'}
-            />
-            <CardLeerHistoria
-              href={'historia'}
-              image={'./images/history01.jpg'}
-              alt={'imageHistoria'}
-              tituloHistoria={'Sin fin de viajes en el subte D'}
-              sinopsis={'Todas las mañanas me subía al subte D, sin destino alguno, pero con una meta por alcanzar. Recopilar la mayor...'}
-              autor={'Tatiana Numerosky'}
-            />
-            <CardLeerHistoria
-              href={'historia'}
-              image={'./images/history01.jpg'}
-              alt={'imageHistoria'}
-              tituloHistoria={'Sin fin de viajes en el subte D'}
-              sinopsis={'Todas las mañanas me subía al subte D, sin destino alguno, pero con una meta por alcanzar. Recopilar la mayor...'}
-              autor={'Tatiana Numerosky'}
-            />
-            <CardLeerHistoria
-              href={'historia'}
-              image={'./images/history01.jpg'}
-              alt={'imageHistoria'}
-              tituloHistoria={'Sin fin de viajes en el subte D'}
-              sinopsis={'Todas las mañanas me subía al subte D, sin destino alguno, pero con una meta por alcanzar. Recopilar la mayor...'}
-              autor={'Tatiana Numerosky'}
-            />
-            <CardLeerHistoria
-              href={'historia'}
-              image={'./images/history01.jpg'}
-              alt={'imageHistoria'}
-              tituloHistoria={'Sin fin de viajes en el subte D'}
-              sinopsis={'Todas las mañanas me subía al subte D, sin destino alguno, pero con una meta por alcanzar. Recopilar la mayor...'}
-              autor={'Tatiana Numerosky'}
-            />
-            <CardLeerHistoria
-              href={'historia'}
-              image={'./images/history01.jpg'}
-              alt={'imageHistoria'}
-              tituloHistoria={'Sin fin de viajes en el subte D'}
-              sinopsis={'Todas las mañanas me subía al subte D, sin destino alguno, pero con una meta por alcanzar. Recopilar la mayor...'}
-              autor={'Tatiana Numerosky'}
-            />
+            {
+              historias.slice(0, 6).map(historia => (
+                <CardLeerHistoria
+                  key={historia.id}
+                  href={'historia'}
+                  image={'./images/history01.jpg'}
+                  tituloHistoria={historia.titulo}
+                  descripcion={historia.descripcion}
+                  autor={'Tatiana Numerosky'}
+                />
+              ))
+            }
             <Accion>
               <Boton href={'lista-historias'} backgroundColor={true} borderColor={false} colorText={false}> Leer más </Boton>
             </Accion>

@@ -8,4 +8,5 @@ export { default as CardLeerHistoria } from './CardLeerHistoria';
 export { default as CardContinuarHistoria } from './CardContinuarHistoria'; 
 export { default as CardColeccionImages } from './CardColeccionImages';
 export { default as Boton } from './Boton'; 
+export { default as BotonSubmit } from './BotonSubmit'; 
 export { default as Ilustracion } from './Ilustracion'; 
