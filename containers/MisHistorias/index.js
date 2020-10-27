@@ -1,9 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { firebase } from '../../lib';
+const firebaseDB = firebase.database();
 
 import { ContainerMain, Banner, Container, NavHistorias, EnProceso, Accion } from './styles';
 import { Wrapper, CardContinuarHistoria, Boton } from '../../components';
 
-function MisHistoriasContainer() {
+function MisHistoriasContainer({ user }) {
+
+  // Traigo las primeras 6 historias de la base de datos //
+  const [misHistorias, setMisHistorias] = useState([]);
+  const { name: username } = user;
+  console.log("user: ", user)
+
+  const getMisHistorias = async () => {
+    firebaseDB.ref('historias').orderByChild('username').equalTo(username).once('value', (snapshot) => {
+      const misHistoriasArr = [];
+      snapshot.forEach((childSnapshot) => {
+        misHistoriasArr.push({
+          id: childSnapshot.key,
+          ...childSnapshot.val()
+        })
+      })
+      // historiasArr.reverse()
+      console.log("getMisHistorias: ", misHistoriasArr);
+      setMisHistorias(misHistoriasArr)
+    })
+  }
+
+  useEffect(() => {
+    getMisHistorias();
+  }, []);
+
   return (
     <ContainerMain>
       <Banner>
@@ -23,30 +50,18 @@ function MisHistoriasContainer() {
           </NavHistorias>
 
           <EnProceso>
-            <CardContinuarHistoria
-              image={'./images/placeholderHistoria.png'}
-              alt={'imageHistoria'}
-              tituloHistoria={'Algún día te encontraré'}
-              sinopsis={'Todas las mañanas me subía al subte D, sin destino alguno, pero con una meta por alcanzar. Recopilar la mayor...'}
-            />
-            <CardContinuarHistoria
-              image={'./images/placeholderHistoria.png'}
-              alt={'imageHistoria'}
-              tituloHistoria={'Algún día te encontraré'}
-              sinopsis={'Todas las mañanas me subía al subte D, sin destino alguno, pero con una meta por alcanzar. Recopilar la mayor...'}
-            />
-            <CardContinuarHistoria
-              image={'./images/placeholderHistoria.png'}
-              alt={'imageHistoria'}
-              tituloHistoria={'Algún día te encontraré'}
-              sinopsis={'Todas las mañanas me subía al subte D, sin destino alguno, pero con una meta por alcanzar. Recopilar la mayor...'}
-            />
-            <CardContinuarHistoria
-              image={'./images/placeholderHistoria.png'}
-              alt={'imageHistoria'}
-              tituloHistoria={'Algún día te encontraré'}
-              sinopsis={'Todas las mañanas me subía al subte D, sin destino alguno, pero con una meta por alcanzar. Recopilar la mayor...'}
-            />
+            {
+              misHistorias.map(miHistoria => (
+                <CardContinuarHistoria
+                  key={miHistoria.id}
+                  href={'historia'}
+                  image={'./images/history01.jpg'}
+                  alt={'./images/history01.jpg'}
+                  tituloHistoria={miHistoria.titulo}
+                  descripcion={miHistoria.descripcion}
+                />
+              ))
+            }
           </EnProceso>
 
         </Container>

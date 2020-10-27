@@ -23,7 +23,7 @@ export const addHistoria = async (req) => {
 
     //Agrego document en la collection de historias (usando firebase con async/await)
     const responseKey = await firebaseDB.ref('historias').push({
-      //username,
+      username: req.username,
       titulo: req.titulo,
       genero: req.genero,
       descripcion: req.descripcion,

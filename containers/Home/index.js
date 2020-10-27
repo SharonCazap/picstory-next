@@ -16,7 +16,6 @@ function HomeContainer() {
       .then(res => res.json())
       .then(response => {
         setImages(response.hits);
-        console.log(response);
       })
       .catch(error => {
         // setErrors(error);
@@ -37,7 +36,7 @@ function HomeContainer() {
         })
       })
       // historiasArr.reverse()
-      console.log("getHistorias: ", historiasArr);
+      // console.log("getHistorias: ", historiasArr);
       setHistorias(historiasArr)
     })
   }
@@ -114,9 +113,7 @@ function HomeContainer() {
             </SeguirEscribiendo>
           </ContinuarHistoria>
         </Container>
-
       </Wrapper>
-
     </ContainerMain>
   );
 }

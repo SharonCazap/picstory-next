@@ -11,7 +11,7 @@ const CardContinuarHistoria = ( props ) => {
       </figure>
       <Info>
         <h3>{props.tituloHistoria}</h3> 
-        <p>{props.sinopsis}</p>
+        <p>{props.descripcion}</p>
         <Actions>
           <button onClick={props.edit} className='editButton'></button>
           <button onClick={props.delet} className='deleteButton'></button>

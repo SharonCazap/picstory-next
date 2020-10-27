@@ -3,10 +3,14 @@ import React, { useState } from 'react';
 import { ContainerMain, Banner, Container, FormContent, EscribirInfo, Input, EscribirHistoria, Accion } from './styles';
 import { Wrapper, Boton } from '../../components';
 
-function EscribirHistoriaContainer(props) {
+function EscribirHistoriaContainer( props ) {
+  const { user } = props; 
 
+  const { name: username } = user;
+  console.log("user: ", username)
+  
   const initialStateValues = {
-    username: '',
+    username: username,
     titulo: '',
     genero: '',
     descripcion: '',
