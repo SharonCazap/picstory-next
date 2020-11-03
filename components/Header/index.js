@@ -14,24 +14,24 @@ function Header({ user, loading }) {
         <Container>
           <Logo>
             <Link href={'/home'}>
-              <img src='./images/logo.png' alt='Picstory' />
+              <img src='/images/logo.png' alt='Picstory' />
             </Link>
           </Logo>
           {!loading &&
             (user ? ( // Hay usuario logeado...
               <User>
                 <Write>
-                  <Link href={'escribir'}>
+                  <Link href={'/historia/escribir'}>
                     Escribir
                   </Link>
                 </Write>
                 <ul>
                   <li onClick={() => setOpenMenuUser(!openMenuUser)}>
-                    <UserImage src='./images/usuario.jpg' alt='User Image' />
+                    <UserImage src='/images/usuario.jpg' alt='User Image' />
                   </li>
                   <div className={openMenuUser ? 'dropdown' : 'dropup'}>
-                    <a href={''}>Mis historias</a>
-                    <a href={''}>Mis im&aacute;genes</a>
+                    <a href={'/mis-historias'}>Mis historias</a>
+                    <a href={'/'}>Mis im&aacute;genes</a>
                     <a href={'/configuracion'}>Configuraci&oacute;n</a>
                     <a href={'/api/logout'}>Cerrar sesi&oacute;n</a>
                   </div>

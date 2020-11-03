@@ -1,20 +1,20 @@
 import React from "react";
 // import { jsxAttribute } from "@babel/types"
-import auth0 from '../lib/auth0';
+import auth0 from '../../lib/auth0';
 
-import { Layout, EscribirHistoria as EscribirHistoriaContainer } from '../containers';
+import { Layout, EscribirHistoria as EscribirHistoriaContainer } from '../../containers';
 
-import { addHistoria } from './api/historias/add';
+import { addHistoria } from '../api/historias/add';
 
-export default function Escribir( {user} ) {
+function Escribir( {user} ) {
 
-  const addOrEditHistoria = (historiaObject) => {
-    addHistoria(historiaObject);
+  const addOrEditHistoria = (historiaObject, currentId) => {
+    addHistoria(historiaObject, currentId);
   }
   
   return (
     <Layout>
-      <EscribirHistoriaContainer user={user} addOrEditHistoria={addOrEditHistoria} />
+      <EscribirHistoriaContainer user={user} addOrEditHistoria={addOrEditHistoria} currentId={""}/>
     </Layout>
   )
 }
@@ -31,3 +31,5 @@ export async function getServerSideProps({ req, res }) {
   console.log("user: ", session.user)
   return { props: { user: session.user } };
 }
+
+export default Escribir;

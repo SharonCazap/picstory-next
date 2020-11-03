@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router'
+
 import { firebase } from '../../lib';
 const firebaseDB = firebase.database();
 
@@ -10,7 +12,7 @@ function MisHistoriasContainer({ user }) {
   // Traigo las primeras 6 historias de la base de datos //
   const [misHistorias, setMisHistorias] = useState([]);
   const { name: username } = user;
-  console.log("user: ", user)
+  // console.log("user: ", user)
 
   const getMisHistorias = async () => {
     firebaseDB.ref('historias').orderByChild('username').equalTo(username).once('value', (snapshot) => {
@@ -22,7 +24,7 @@ function MisHistoriasContainer({ user }) {
         })
       })
       // historiasArr.reverse()
-      console.log("getMisHistorias: ", misHistoriasArr);
+      // console.log("getMisHistorias: ", misHistoriasArr);
       setMisHistorias(misHistoriasArr)
     })
   }
@@ -30,6 +32,22 @@ function MisHistoriasContainer({ user }) {
   useEffect(() => {
     getMisHistorias();
   }, []);
+
+  const onDeleteHistoria = async (id) => {
+    if (window.confirm("¿Estas seguro que quieres elminiar esta historia?")) {
+      await firebaseDB.ref(`historias/${id}`).remove();
+      console.log("La historia que elimino es la: ", id);
+      getMisHistorias(); // Refrezco la página para ver las historias actualizadas una vez que se elimina //
+    }
+  }
+
+  const router = useRouter();
+  const onEditHistoria = (id) => {
+    router.push({
+      pathname: `historia/editar/${id}`,
+      query: { pid: id },
+    })
+  }
 
   return (
     <ContainerMain>
@@ -54,12 +72,20 @@ function MisHistoriasContainer({ user }) {
               misHistorias.map(miHistoria => (
                 <CardContinuarHistoria
                   key={miHistoria.id}
-                  href={'historia'}
-                  image={'./images/history01.jpg'}
-                  alt={'./images/history01.jpg'}
-                  tituloHistoria={miHistoria.titulo}
-                  descripcion={miHistoria.descripcion}
-                />
+                // href={'historia'}
+                >
+                  <figure>
+                    <img src={'./images/history01.jpg'} alt={'./images/history01.jpg'} />
+                  </figure>
+                  <div>
+                    <h3>{miHistoria.titulo}</h3>
+                    <p>{miHistoria.descripcion}</p>
+                    <div>
+                      <button onClick={() => onEditHistoria(miHistoria.id)} className='editButton'></button>
+                      <button onClick={() => onDeleteHistoria(miHistoria.id)} className='deleteButton'></button>
+                    </div>
+                  </div>
+                </CardContinuarHistoria>
               ))
             }
           </EnProceso>

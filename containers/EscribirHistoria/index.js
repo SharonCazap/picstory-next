@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
+import { firebase } from '../../lib';
+const firebaseDB = firebase.database();
 
 import { ContainerMain, Banner, Container, FormContent, EscribirInfo, Input, EscribirHistoria, Accion } from './styles';
 import { Wrapper, Boton } from '../../components';
 
 function EscribirHistoriaContainer( props ) {
   const { user } = props; 
+  console.log("props: ", props.currentId)
 
   const { name: username } = user;
   console.log("user: ", username)
@@ -26,10 +30,27 @@ function EscribirHistoriaContainer( props ) {
 
   const handleSubmit = e => {
     e.preventDefault(); //  no recarga la pagina después de guardar //
-    // console.log(values);    
-    props.addOrEditHistoria(values);
+    // console.log(values); 
+    props.addOrEditHistoria(values, props.currentId);
     setValues({...initialStateValues}); // para que al agregar datos, los input se limpien //
   }
+
+  const getHistoriaById = async (id) => {
+    await firebaseDB.ref(`historias/${id}`).once('value', (snapshot) => {
+      const miHistoriaArr = snapshot.val();
+      console.log("miHistoriasArr: ", miHistoriaArr)
+      setValues({...miHistoriaArr})
+    })
+  }
+
+  useEffect(() => {
+    if(props.currentId === ""){
+      setValues({...initialStateValues});
+    } else {
+      console.log("editando id: ", props.currentId);
+      getHistoriaById(props.currentId);
+    }
+  }, [props.currentId])
 
   return (
     <ContainerMain>
@@ -84,7 +105,7 @@ function EscribirHistoriaContainer( props ) {
 
             <Accion>
               <Boton href={'mis-historias'} backgroundColor={false} borderColor={true} colorText={true}> Continuar despu&eacute;s </Boton>
-              <button>Publicar</button>
+              <button>{props.currentId === "" ? 'Publicar' : 'Actualizar'}</button>
             </Accion>
           </form>
         </Container>
