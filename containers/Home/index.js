@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 import { firebase } from '../../lib';
 const firebaseDB = firebase.database();
@@ -8,6 +9,7 @@ import { Wrapper, Titulo, CardLeerHistoria, Boton, Ilustracion, CardContinuarHis
 
 function HomeContainer({ user }) {
   const { name: username } = user;
+  const { nickname: nickname } = user;
   console.log("user: ", user)
 
   // Traigo las images de la API de pixabay //
@@ -44,9 +46,36 @@ function HomeContainer({ user }) {
     })
   }
 
+  // Traigo mis historias de la base de datos //
+  const [misHistorias, setMisHistorias] = useState([]);
+
+  const getMisHistorias = async () => {
+    firebaseDB.ref('historias').orderByChild('username').equalTo(username).once('value', (snapshot) => {
+      const misHistoriasArr = [];
+      snapshot.forEach((childSnapshot) => {
+        misHistoriasArr.push({
+          id: childSnapshot.key,
+          ...childSnapshot.val()
+        })
+      })
+      // historiasArr.reverse()
+      // console.log("getMisHistorias: ", misHistoriasArr);
+      setMisHistorias(misHistoriasArr)
+    })
+  }
+
   useEffect(() => {
     getHistorias();
+    getMisHistorias();
   }, []);
+
+  const router = useRouter();
+  const onEditHistoria = (id) => {
+    router.push({
+      pathname: `historia/editar/${id}`,
+      query: { pid: id },
+    })
+  }
 
   return (
     <ContainerMain>
@@ -67,7 +96,7 @@ function HomeContainer({ user }) {
                   image={'./images/history01.jpg'}
                   tituloHistoria={historia.titulo}
                   descripcion={historia.descripcion}
-                  autor={'Tatiana Numerosky'}
+                  autor={historia.nickname}
                 />
               ))
             }
@@ -100,17 +129,27 @@ function HomeContainer({ user }) {
               Continuá donde dejaste
             </Titulo>
             <h5>Termina de escribir la historia y publicala.</h5>
-            <Ilustracion image={'./images/ilustracionHistorias.png'} alt={'imageHistoriaContinuar'}/>
+            <Ilustracion image={'./images/ilustracionHistorias.png'} alt={'imageHistoriaContinuar'} />
             <SeguirEscribiendo>
-              <CardContinuarHistoria
-                href={'continuar'}
-                image={'./images/placeholderHistoria.png'}
-                alt={'imageHistoria'}
-                tituloHistoria={'Algún día te encontraré'}
-                sinopsis={'Todas las mañanas me subía al subte D, sin destino alguno, pero con una meta por alcanzar. Recopilar la mayor...'}
-                fecha={'hace 3 días'}
-              >
-              </CardContinuarHistoria>
+              {
+                misHistorias.slice(0, 1).map(miHistoria => (
+                  <CardContinuarHistoria
+                    key={miHistoria.id}
+                  // href={`historia/${historia.id}`}
+                  >
+                    <figure>
+                      <img src={'./images/history01.jpg'} alt={'./images/history01.jpg'} />
+                    </figure>
+                    <div>
+                      <h3>{miHistoria.titulo}</h3>
+                      <p>{miHistoria.descripcion}</p>
+                      <div>
+                        <button onClick={() => onEditHistoria(miHistoria.id)} className='editButton'></button>
+                      </div>
+                    </div>
+                  </CardContinuarHistoria>
+                ))
+              }
               <Accion>
                 <Boton href={'continuar'} backgroundColor={false} borderColor={true} colorText={true}> Continuar </Boton>
               </Accion>

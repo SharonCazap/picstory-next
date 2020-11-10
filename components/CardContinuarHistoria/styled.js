@@ -65,7 +65,7 @@ export const Card = styled.a`
     margin-bottom: 20px!important;
     justify-content: flex-end; 
     button.editButton {
-      background-image: url('./images/edit.svg');
+      background-image: url('/images/edit.svg');
       background-size: cover;
       border: none;
       background-color: transparent;
@@ -76,7 +76,7 @@ export const Card = styled.a`
       cursor: pointer;
     }
     button.deleteButton {
-      background-image: url('./images/delete.svg');
+      background-image: url('/images/delete.svg');
       background-size: cover;
       border: none;
       background-color: transparent;

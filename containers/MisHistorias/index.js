@@ -9,7 +9,7 @@ import { Wrapper, CardContinuarHistoria, Boton } from '../../components';
 
 function MisHistoriasContainer({ user }) {
 
-  // Traigo las historias de la base de datos //
+  // Traigo mis historias de la base de datos //
   const [misHistorias, setMisHistorias] = useState([]);
   
   const { name: username } = user;

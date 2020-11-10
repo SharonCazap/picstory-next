@@ -11,7 +11,7 @@ function ListaHistoriasContainer({ user }) {
   // Traigo las historias de la base de datos //
   const [historias, setHistorias] = useState([]);
 
-  const { nickname: username } = user;
+  // const { nickname: username } = user;
   console.log("user: ", user)
 
   const getHistorias = async () => {
@@ -49,7 +49,7 @@ function ListaHistoriasContainer({ user }) {
                   image={'./images/history01.jpg'}
                   tituloHistoria={historia.titulo}
                   descripcion={historia.descripcion}
-                  autor={username}
+                  autor={historia.nickname}
                 />
               ))
             }

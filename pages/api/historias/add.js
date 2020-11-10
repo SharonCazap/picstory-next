@@ -25,6 +25,7 @@ try {
       //Agrego document en la collection de historias (usando firebase con async/await)
       const responseKey = await firebaseDB.ref('historias').push({
         username: req.username,
+        nickname: req.nickname,
         titulo: req.titulo,
         genero: req.genero,
         descripcion: req.descripcion,
@@ -34,6 +35,7 @@ try {
     else{
       await firebaseDB.ref(`historias/${currentId}`).update({
         username: req.username,
+        nickname: req.nickname,
         titulo: req.titulo,
         genero: req.genero,
         descripcion: req.descripcion,

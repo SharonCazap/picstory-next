@@ -11,10 +11,12 @@ function EscribirHistoriaContainer( props ) {
   console.log("props: ", props.currentId)
 
   const { name: username } = user;
-  console.log("user: ", username)
+  const { nickname: nickname } = user;
+  console.log("user: ", username, nickname)
   
   const initialStateValues = {
     username: username,
+    nickname: nickname,
     titulo: '',
     genero: '',
     descripcion: '',
@@ -23,6 +25,7 @@ function EscribirHistoriaContainer( props ) {
 
   const [values, setValues] = useState(initialStateValues);
 
+  console.log(initialStateValues)
   const handleInputChange = e => {
     const { name, value } = e.target;
     setValues({...values, [name]: value});
@@ -30,7 +33,7 @@ function EscribirHistoriaContainer( props ) {
 
   const handleSubmit = e => {
     e.preventDefault(); //  no recarga la pagina después de guardar //
-    // console.log(values); 
+     console.log(values); 
     props.addOrEditHistoria(values, props.currentId);
     setValues({...initialStateValues}); // para que al agregar datos, los input se limpien //
   }
