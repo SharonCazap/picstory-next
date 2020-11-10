@@ -1,31 +1,18 @@
 import React, { useEffect, useState } from 'react';
+
 import { firebase } from '../../lib';
 const firebaseDB = firebase.database();
 
 import { ContainerMain, Banner, Container, Historias, Accion } from './styles';
 import { Wrapper, CardLeerHistoria, Boton } from '../../components';
 
-// import { getHistorias } from '../../pages/api/historias';
+function ListaHistoriasContainer({ user }) {
 
-function ListaHistoriasContainer() {
+  // Traigo las historias de la base de datos //
   const [historias, setHistorias] = useState([]);
 
-  // const getData = async () => {
-  //   try {
-  //     const historiasList = await getHistorias();
-  //     console.log("Dentro del getData historiasArr: ", historiasList);
-  //     setHistorias(historiasList)
-  //   }
-  //   catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   getData();
-  //   console.log("dentro del useEffect: ",historias)
-  // }, []);
-  // console.log("historiasArr: ", historias)
+  const { nickname: username } = user;
+  console.log("user: ", user)
 
   const getHistorias = async () => {
     firebaseDB.ref('historias').once('value', (snapshot) => {
@@ -58,11 +45,11 @@ function ListaHistoriasContainer() {
               historias.map(historia => (
                 <CardLeerHistoria
                   key={historia.id}
-                  href={'historia'}
+                  href={`historia/${historia.id}`}
                   image={'./images/history01.jpg'}
                   tituloHistoria={historia.titulo}
                   descripcion={historia.descripcion}
-                  autor={'Tatiana Numerosky'}
+                  autor={username}
                 />
               ))
             }

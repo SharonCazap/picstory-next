@@ -8,7 +8,7 @@ import { ContainerBody } from './styles';
 
 function Layout({ children }) {
   const { user, loading } = useFetchUser();
-  // console.log('user: ', user);
+  console.log('hay user: ', user);
   
   return (
     <ContainerBody>

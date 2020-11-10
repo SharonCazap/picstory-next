@@ -104,3 +104,29 @@ export const Card = styled.a`
   }
 `;
 
+export const Info = styled.div` 
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 15px 20px;
+  justify-content: space-between; 
+  h3{
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    font-size: 21px;
+    color: ${leerColor(colores.violeta)};
+    margin: 0;
+  }
+  p{
+    font-size: 16px;
+    line-height: 23px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    margin: 0;
+  }
+  span{
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+  }
+`;

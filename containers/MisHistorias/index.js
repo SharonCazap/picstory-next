@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
 
 import { firebase } from '../../lib';
 const firebaseDB = firebase.database();
@@ -9,8 +9,9 @@ import { Wrapper, CardContinuarHistoria, Boton } from '../../components';
 
 function MisHistoriasContainer({ user }) {
 
-  // Traigo las primeras 6 historias de la base de datos //
+  // Traigo las historias de la base de datos //
   const [misHistorias, setMisHistorias] = useState([]);
+  
   const { name: username } = user;
   // console.log("user: ", user)
 
@@ -72,7 +73,7 @@ function MisHistoriasContainer({ user }) {
               misHistorias.map(miHistoria => (
                 <CardContinuarHistoria
                   key={miHistoria.id}
-                // href={'historia'}
+                  // href={`historia/${miHistoria.id}`}
                 >
                   <figure>
                     <img src={'./images/history01.jpg'} alt={'./images/history01.jpg'} />

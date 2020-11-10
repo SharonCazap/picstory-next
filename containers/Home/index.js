@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
+
 import { firebase } from '../../lib';
 const firebaseDB = firebase.database();
 
 import { ContainerMain, Banner, Container, Historias, Imagenes, ImagenHome, SeguirEscribiendo, ContinuarHistoria, Accion } from './styles';
 import { Wrapper, Titulo, CardLeerHistoria, Boton, Ilustracion, CardContinuarHistoria } from '../../components';
 
-function HomeContainer() {
+function HomeContainer({ user }) {
+  const { name: username } = user;
+  console.log("user: ", user)
 
   // Traigo las images de la API de pixabay //
   // const [hasError, setErrors] = useState(false);
@@ -60,7 +63,7 @@ function HomeContainer() {
               historias.slice(0, 6).map(historia => (
                 <CardLeerHistoria
                   key={historia.id}
-                  href={'historia'}
+                  href={`historia/${historia.id}`}
                   image={'./images/history01.jpg'}
                   tituloHistoria={historia.titulo}
                   descripcion={historia.descripcion}
@@ -106,7 +109,8 @@ function HomeContainer() {
                 tituloHistoria={'Algún día te encontraré'}
                 sinopsis={'Todas las mañanas me subía al subte D, sin destino alguno, pero con una meta por alcanzar. Recopilar la mayor...'}
                 fecha={'hace 3 días'}
-              />
+              >
+              </CardContinuarHistoria>
               <Accion>
                 <Boton href={'continuar'} backgroundColor={false} borderColor={true} colorText={true}> Continuar </Boton>
               </Accion>

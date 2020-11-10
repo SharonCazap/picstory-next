@@ -92,6 +92,7 @@ export const HistoriaTexto = styled.div`
     font-weight: 400;
     color: ${leerColor(colores.grisTres)};
     margin-bottom: 21px;
+    white-space: pre-wrap;
   }
   i{
     display: block;

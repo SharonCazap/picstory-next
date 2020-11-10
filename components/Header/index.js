@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { HeaderContainer, Container, Logo, Accion, User, Write, UserImage } from './styled';
 
 import { Wrapper, Boton } from '../../components';
 
 function Header({ user, loading }) {
+
+  console.log("user: ", user);
 
   const [openMenuUser, setOpenMenuUser] = useState(false);
 
@@ -27,7 +29,7 @@ function Header({ user, loading }) {
                 </Write>
                 <ul>
                   <li onClick={() => setOpenMenuUser(!openMenuUser)}>
-                    <UserImage src='/images/usuario.jpg' alt='User Image' />
+                    <UserImage src={user.picture} alt={user.username} />
                   </li>
                   <div className={openMenuUser ? 'dropdown' : 'dropup'}>
                     <a href={'/mis-historias'}>Mis historias</a>

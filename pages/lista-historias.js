@@ -1,24 +1,26 @@
 import React from "react";
 // import { jsxAttribute } from "@babel/types"
+import auth0 from '../lib/auth0';
 
 import { Layout, ListaHistorias as ListaHistoriasContainer } from '../containers';
 
-// import { getHistorias } from './api/historias';
-
-function ListaHistorias() {
-
-  // const getHistoriasList = (historiasList) => {
-  //   console.log("entro al get: " + historiasList);
-  //   getHistorias(historiasList);
-  //   console.log("GetHistorias: " ,getHistorias(historiasList));
-  // }
-
+export default function ListaHistorias( {user} ) {
   return (
     <Layout>
-      <ListaHistoriasContainer />
+      <ListaHistoriasContainer user={user} />
     </Layout>
   )
 }
 
-
-export default ListaHistorias;
+export async function getServerSideProps({ req, res }) {
+  const session = await auth0.getSession(req);
+  if (!session || !session.user) {
+    res.writeHead(302, {
+      Location: "/api/login",
+    });
+    res.end();
+    return {};
+  }  
+  console.log("user: ", session.user)
+  return { props: { user: session.user } };
+}

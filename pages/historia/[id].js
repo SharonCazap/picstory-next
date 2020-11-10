@@ -1,13 +1,17 @@
 import React from "react";
-// import { jsxAttribute } from "@babel/types"
-import auth0 from '../lib/auth0';
+import { useRouter } from 'next/router';
+import auth0 from '../../lib/auth0';
 
-import { Layout, Home as HomeContainer } from '../containers';
+import { Layout, Historia as HistoriaContainer } from '../../containers';
 
-export default function Home( {user} ) {
+export default function Historia( {user} ) {
+  const router = useRouter();
+  const historiaId = router.query;
+  console.log("historiaId: ", historiaId);
+
   return (
     <Layout>
-      <HomeContainer user={user}/>
+      <HistoriaContainer user={user} currentId={historiaId.id}/>
     </Layout>
   )
 }
@@ -20,7 +24,7 @@ export async function getServerSideProps({ req, res }) {
     });
     res.end();
     return {};
-  } 
+  }  
   console.log("user: ", session.user)
   return { props: { user: session.user } };
 }
