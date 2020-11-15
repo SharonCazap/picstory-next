@@ -6,14 +6,14 @@ const firebaseDB = firebase.database();
 import { ContainerMain, Banner, Container, FormContent, EscribirInfo, Input, EscribirHistoria, Accion } from './styles';
 import { Wrapper, Boton } from '../../components';
 
-function EscribirHistoriaContainer( props ) {
-  const { user } = props; 
-  console.log("props: ", props.currentId)
+function EscribirHistoriaContainer(props) {
+  const { user } = props;
+  // console.log("props: ", props.currentId)
 
   const { name: username } = user;
   const { nickname: nickname } = user;
-  console.log("user: ", username, nickname)
-  
+  // console.log("user: ", username, nickname)
+
   const initialStateValues = {
     username: username,
     nickname: nickname,
@@ -25,30 +25,44 @@ function EscribirHistoriaContainer( props ) {
 
   const [values, setValues] = useState(initialStateValues);
 
-  console.log(initialStateValues)
+  const [wordCount, setWordCount] = useState(0);
+  const [disabled, setDisable] = useState(false);
+  const limit = 2500;
+
+  // console.log(initialStateValues)
   const handleInputChange = e => {
     const { name, value } = e.target;
-    setValues({...values, [name]: value});
+    setValues({ ...values, [name]: value });
+
+    const text = value.split(' ');
+    console.log("value: ", text)
+    if (text.filter(Boolean).length > limit) {
+      console.log("supero el limite")
+      setDisable(true);
+    } else {
+      console.log("btntnr");
+      setWordCount(text.filter(Boolean).length)
+    }
   }
 
   const handleSubmit = e => {
     e.preventDefault(); //  no recarga la pagina después de guardar //
-     console.log(values); 
+    console.log(values);
     props.addOrEditHistoria(values, props.currentId);
-    setValues({...initialStateValues}); // para que al agregar datos, los input se limpien //
+    setValues({ ...initialStateValues }); // para que al agregar datos, los input se limpien //
   }
 
   const getHistoriaById = async (id) => {
     await firebaseDB.ref(`historias/${id}`).once('value', (snapshot) => {
       const miHistoriaArr = snapshot.val();
       console.log("miHistoriasArr: ", miHistoriaArr)
-      setValues({...miHistoriaArr})
+      setValues({ ...miHistoriaArr })
     })
   }
 
   useEffect(() => {
-    if(props.currentId === ""){
-      setValues({...initialStateValues});
+    if (props.currentId === "") {
+      setValues({ ...initialStateValues });
     } else {
       console.log("editando id: ", props.currentId);
       getHistoriaById(props.currentId);
@@ -94,6 +108,9 @@ function EscribirHistoriaContainer( props ) {
                   value={values.descripcion}
                 >
                 </textarea>
+                <p>
+                  {wordCount}/{limit}
+                </p>
               </EscribirInfo>
               <EscribirHistoria>
                 <textarea
@@ -101,8 +118,13 @@ function EscribirHistoriaContainer( props ) {
                   placeholder='Comienza a escribir tu historia'
                   onChange={handleInputChange}
                   value={values.texto}
+                  disabled={disabled}
+                  limit={limit}
                 >
                 </textarea>
+                <p>
+                  {wordCount}/{limit}
+                </p>
               </EscribirHistoria>
             </FormContent>
 
