@@ -43,11 +43,22 @@ export const Container = styled.div`
   justify-content: space-between;
   width: 100%;
 `;
+export const Paginacion = styled.div` 
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 20px auto 10px;
+  width: 100%;
+  button.Mui-selected{
+    background-color: ${leerColor(colores.rosa)};
+    color: ${leerColor(colores.blanco)};
+  }
+`;
 export const Accion = styled.div` 
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  margin: 40px auto;
+  margin: 40px auto 20px;
   width: 35%;
 `;
 export const Imagenes = styled.div`

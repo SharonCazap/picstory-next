@@ -58,6 +58,8 @@ function ListaHistoriasContainer({ user }) {
             <Boton href={'lista-historias'} backgroundColor={true} borderColor={false} colorText={false}> Leer más </Boton>
             <Boton href={'imagenes'} backgroundColor={false} borderColor={true} colorText={true}> Ver imágenes </Boton>
           </Accion>
+
+          {/* Paginacion */}
         </Container>
       </Wrapper>
     </ContainerMain>
