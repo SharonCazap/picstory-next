@@ -89,7 +89,7 @@ export const EnProceso = styled.div`
   display: flex;
   flex-direction: column;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
   div{
     width: 45%; 

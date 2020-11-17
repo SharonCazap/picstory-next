@@ -58,14 +58,14 @@ function MisHistoriasContainer({ user }) {
       <Wrapper>
         <Container>
           <NavHistorias>
-            <ul>
+            {/* <ul>
               <li className='activo'>
                 <a href={'/'}>En proceso</a>
               </li>
               <li className=''>
                 <a href={'mis-historias-publicadas'}>Publicadas</a>
               </li>
-            </ul>
+            </ul> */}
           </NavHistorias>
 
           <EnProceso>
