@@ -29,7 +29,10 @@ try {
         titulo: req.titulo,
         genero: req.genero,
         descripcion: req.descripcion,
-        texto: req.texto
+        texto: req.texto,
+        palabras: req.palabras,
+        tiempoLectura: req.tiempoLectura,
+        imagenPortada: req.imagenPortada
       }).getKey()
     }
     else{
@@ -39,7 +42,10 @@ try {
         titulo: req.titulo,
         genero: req.genero,
         descripcion: req.descripcion,
-        texto: req.texto
+        texto: req.texto,
+        palabras: req.palabras,
+        tiempoLectura: req.tiempoLectura,
+        imagenPortada: req.imagenPortada
       })
     }
 

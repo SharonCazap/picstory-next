@@ -50,11 +50,22 @@ export const Historias = styled.div`
   display: flex; 
   flex-direction: column;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: baseline; 
   h2{
     width: 100%; 
     margin-bottom: 40px;
+  }
+`;
+export const Paginacion = styled.div` 
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 20px auto 10px;
+  width: 100%;
+  button.Mui-selected{
+    background-color: ${leerColor(colores.rosa)};
+    color: ${leerColor(colores.blanco)};
   }
 `;
 export const Accion = styled.div` 

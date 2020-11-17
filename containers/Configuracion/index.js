@@ -1,9 +1,13 @@
 import React from 'react';
 
-import { ContainerMain, Banner, Container, Configuracion, ConfiguracionInfo, Accion } from './styles';
+import { ContainerMain, Banner, Container, Configuracion, ConfiguracionInfo, UserData, Accion } from './styles';
 import { Wrapper, Boton } from '../../components';
 
-function ConfiguracionContainer() {
+function ConfiguracionContainer({ user }) {
+
+  const { name: userId, nickname: nickname } = user;
+  console.log("username: ", userId, "nickname: ", nickname )
+  
   return (
     <ContainerMain>
       <Banner>
@@ -11,13 +15,23 @@ function ConfiguracionContainer() {
       </Banner>
       <Wrapper>
         <Container>
-          <Configuracion>
+          {/* <Configuracion>
             <h3>Cuenta</h3>
             <h3>Notificaciones</h3>
             <h3>Seguridad e inicio de sesi&oacute;n</h3>
-          </Configuracion>
+          </Configuracion> */}
           <ConfiguracionInfo>
             <h3>Configuraci&oacute;n general de la cuenta</h3>
+            <UserData>
+              <div>
+                <h4>Nombre de usuario</h4>
+                <span>{nickname}</span>
+              </div>
+              <div>
+                <h4>Email</h4>
+                <span>{userId}</span>
+              </div>
+            </UserData>
           </ConfiguracionInfo>
         </Container>
         <Container>

@@ -120,6 +120,84 @@ export const EscribirHistoria = styled.div`
     }
   }
 `;
+export const Imagenes = styled.div` 
+  display: flex;
+  flex-direction: column;
+  flex-flow: row wrap;
+  width: 100%;
+  justify-content: space-evenly;
+  margin: 50px auto 0;
+  h3{
+    width: 100%;
+    font-family: 'Lora', serif;
+    font-size: 24px;
+    color: ${leerColor(colores.violeta)};
+    font-weight: 700;
+    margin: 0 0 0.5em 0;;
+  }
+`;
+export const CardImagen = styled.div` 
+  text-decoration: none;
+  display: flex; 
+  flex-direction: column;
+  flex-flow: row wrap;
+  width: 100px;
+  height: 150px;
+  border-radius: 20px;     
+  margin: 40px 10px;
+  /* img:hover{
+    transform: scale(1.05);
+    transition: 0.2s;
+  } */
+  img{
+    width: 100%;
+    height: inherit;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: 0.2s;
+  }
+  div{
+    display: flex;
+    flex-direction: column;
+    flex-flow: row wrap;
+    width: 100%;
+  }
+  div button {
+    border-radius: 20px;
+    border: 2px solid ${leerColor(colores.rosa)};
+    background-color: transparent;
+    color: ${leerColor(colores.rosa)};
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+  }
+  @media (min-width: ${breakpoints.mobileGrande}) {
+
+  }
+  @media (min-width: ${breakpoints.tablet}) {
+
+  }
+  @media (min-width: ${breakpoints.laptop}) {
+
+  }
+  @media (min-width: ${breakpoints.laptopL}) {
+
+  }
+  @media (min-width: ${breakpoints.notebook}) {
+
+  }
+`;
+export const Paginacion = styled.div` 
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 100px auto 10px;
+  width: 100%;
+  button.Mui-selected{
+    background-color: ${leerColor(colores.rosa)};
+    color: ${leerColor(colores.blanco)};
+  }
+`;
 export const Accion = styled.div` 
   display: flex;
   flex-direction: row;

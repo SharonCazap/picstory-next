@@ -93,11 +93,19 @@ function HomeContainer({ user }) {
                 <CardLeerHistoria
                   key={historia.id}
                   href={`historia/${historia.id}`}
-                  image={'./images/history01.jpg'}
-                  tituloHistoria={historia.titulo}
-                  descripcion={historia.descripcion}
-                  autor={historia.nickname}
-                />
+                >
+                  <figure>
+                    <img src={historia.imagenPortada.largeImageURL} alt={historia.imagenPortada.tags} />
+                  </figure>
+                  <div>
+                    <h3>{historia.titulo}</h3>
+                    <p>{historia.descripcion}</p>
+                    <div>
+                      <span>{historia.nickname}</span>
+                      <span>{historia.tiempoLectura} mins</span>
+                    </div>
+                  </div>
+                </CardLeerHistoria>
               ))
             }
             <Accion>
@@ -138,7 +146,7 @@ function HomeContainer({ user }) {
                   // href={`historia/${historia.id}`}
                   >
                     <figure>
-                      <img src={'./images/history01.jpg'} alt={'./images/history01.jpg'} />
+                      <img src={miHistoria.imagenPortada.largeImageURL} alt={miHistoria.imagenPortada.tags} />
                     </figure>
                     <div>
                       <h3>{miHistoria.titulo}</h3>

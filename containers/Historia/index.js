@@ -51,7 +51,7 @@ function HistoriaContainer(props) {
             </figure>
             <AutorDatos>
               <h3>{username}</h3>
-              <h6>15 mayo - <span>8 min</span></h6>
+              <h6><span>{values.tiempoLectura}</span> mins</h6>
             </AutorDatos>
           </Autor>
           <Historia>
@@ -62,14 +62,14 @@ function HistoriaContainer(props) {
             </HistoriaTexto>
             <Valorar>
               <hr />
-              <h4>Valorá el texto</h4>
+              {/* <h4>Valorá el texto</h4> */}
             </Valorar>
           </Historia>
           <AutorDescripcion>
-            <img src='/images/usuario.jpg' alt='UserImage'/>
+            <img src={userImage} alt={username}/>
             <AutorInfo>
               <span>Escrito por:</span>
-              <h6>Tatiana Numerosky</h6>
+              <h6>{username}</h6>
               <p>
                 Escribo lo que veo y siento. Observar es el punto de partida 
                 para una buena historia. 

@@ -29,6 +29,46 @@ export const Card = styled.a`
     transform: scale(1.05);
     transition: 0.2s;
   }
+  div{ 
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 15px 20px;
+    justify-content: space-between; 
+    h3{
+      font-family: 'Lora', serif;
+      font-weight: 700;
+      font-size: 21px;
+      color: ${leerColor(colores.violeta)};
+      margin: 0;
+    }
+    p{
+      font-size: 16px;
+      line-height: 23px;
+      font-family: 'Lato', sans-serif;
+      font-weight: 400;
+      margin: 0;
+    }
+    div{ 
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      flex-flow: row wrap;
+    }
+    span{
+      font-size: 14px;
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+    }
+    span:first-of-type{
+      width: 70%;
+    }
+    span:last-of-type{
+      width: 30%;
+      text-align: right;
+    }
+  }
   @media (min-width: ${breakpoints.mobileGrande}) {
 
   }
@@ -46,28 +86,5 @@ export const Card = styled.a`
   }
 `;
 export const Info = styled.div` 
-  display: flex;
-  flex-direction: column;
-  width: 70%;
-  margin: 15px 20px;
-  justify-content: space-between; 
-  h3{
-    font-family: 'Lora', serif;
-    font-weight: 700;
-    font-size: 21px;
-    color: ${leerColor(colores.violeta)};
-    margin: 0;
-  }
-  p{
-    font-size: 16px;
-    line-height: 23px;
-    font-family: 'Lato', sans-serif;
-    font-weight: 400;
-    margin: 0;
-  }
-  span{
-    font-size: 14px;
-    font-family: 'Lato', sans-serif;
-    font-weight: 700;
-  }
+  
 `;

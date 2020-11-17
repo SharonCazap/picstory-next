@@ -14,6 +14,7 @@ export const Container = styled.div`
   padding-bottom: 10px; 
 `;
 export const Logo = styled.h1`
+  cursor: pointer;
   img{
     width: 100%;
   }

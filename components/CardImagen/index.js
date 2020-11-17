@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 
 import { Card } from './styled';
 
-const CardContinuarHistoria = ( {children} ) => {
+const CardImagen = ( {children} ) => {
   return (
     <Card>
       {children}
     </Card>
   )
 }
-CardContinuarHistoria.propTypes = {
+CardImagen.propTypes = {
   children: PropTypes.any.isRequired
 };
 
-export default CardContinuarHistoria;
+export default CardImagen;

@@ -27,11 +27,14 @@ export { default as Imagenes } from './Imagenes';
 // -------------- ESCRIBIR HISTORIA -------------- // 
 export { default as EscribirHistoria } from './EscribirHistoria';
 
-// -------------- MIS HISTORIA -------------- // 
+// -------------- MIS HISTORIAS -------------- // 
 export { default as MisHistorias } from './MisHistorias';
 
 // -------------- MIS HISTORIA -------------- // 
 export { default as MisHistoriasPublicadas } from './MisHistoriasPublicadas';
+
+// -------------- MIS IMAGENES -------------- // 
+export { default as MisImagenes } from './MisImagenes';
 
 // -------------- CONFIGURACION -------------- // 
 export { default as Configuracion } from './Configuracion';

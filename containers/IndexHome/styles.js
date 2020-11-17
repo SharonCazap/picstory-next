@@ -228,3 +228,63 @@ export const EspacioInfo = styled.div`
 
   }
 `; 
+export const BotonDonar = styled.div` 
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  margin: 40px 0 60px;
+  h3{
+    font-weight: 500;
+    font-size: 18px;
+    width: 35%;
+    color: ${leerColor(colores.rosa)};
+    text-align: center;
+    margin-bottom: 0;
+  }
+  p{
+    margin: 0;
+    padding: 20px;
+    font-size: 16px;
+  }
+  a{
+    background-color: #009ee3;
+    color: ${leerColor(colores.blanco)};
+    padding: 15px 45px;
+    border-radius: 5px;
+    transition: 0.2s;
+    font-weight: 500;
+    width: fit-content;
+  }
+  a:hover{
+    background-color: #007eb5;
+    transition: 0.2s;
+  }
+  @media (min-width: ${breakpoints.mobileGrande}) {
+    
+  }
+  @media (min-width: ${breakpoints.tablet}) {
+    div:first-of-type{
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  @media (min-width: ${breakpoints.laptop}) {
+    h2{
+      font-size: 28px;
+    }
+    div:first-of-type{
+      width: 50%;
+      justify-content: center;
+    }
+    div:nth-child(3){
+      width: 50%;
+    }
+  }
+  @media (min-width: ${breakpoints.laptopL}) {
+    
+  }
+  @media (min-width: ${breakpoints.notebook}) {
+
+  }
+`; 

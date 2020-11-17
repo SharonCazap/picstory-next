@@ -78,11 +78,38 @@ export const ConfiguracionInfo = styled.div`
   flex-direction: column;
   margin: 60px 0 0;
   padding: 0 40px 0;
-  width: 70%;
+  width: 100%;
   border-left: 2px solid ${leerColor(colores.violeta)};
   h3{
     margin: 0;
     color: ${leerColor(colores.violeta)};
+  }
+`;
+export const UserData = styled.div` 
+  display: flex; 
+  flex-direction: column; 
+  width: 100%;
+  margin-bottom: 40px; 
+  div{
+    display: flex;
+    flex-direction: column;
+    flex-flow: row wrap;
+    width: 100%;
+    border-bottom: 1px solid ${leerColor(colores.gris)};
+  }
+  div h4{
+    font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px 0;
+    width: 45%;
+    color: ${leerColor(colores.violeta)};
+  }
+  div span{
+    font-weight: 400;
+    margin: 20px 0;
+    width: 45%;
   }
 `;
 export const Accion = styled.div` 

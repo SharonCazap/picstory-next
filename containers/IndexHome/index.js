@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ContainerMain, Banner, Container, ImagenesInfo, Accion, HrHome, Espacio, EspacioInfo } from './styles';
+import { ContainerMain, Banner, Container, ImagenesInfo, Accion, HrHome, Espacio, EspacioInfo, BotonDonar } from './styles';
 import { Wrapper, Boton, Ilustracion, Titulo } from '../../components';
 
 function IndexContainer() {
@@ -12,32 +12,32 @@ function IndexContainer() {
       </Banner>
       <Wrapper>
         <Container>
-            <ImagenesInfo>
-              <h2>Una imagen.<br />Miles de historias.</h2>
-              <div>
-                <p>
-                  Una imagen tiene mil historias que contar.
+          <ImagenesInfo>
+            <h2>Una imagen.<br />Miles de historias.</h2>
+            <div>
+              <p>
+                Una imagen tiene mil historias que contar.
                   <br />
                   Elegí una y empezá a escribir.
                   <br />
                   Compartí tu historia con la comunidad y leé todas las historias que las imagenes tienen para contar.
                 </p>
-                <Accion>
-                  <Boton href={'login'} backgroundColor={true} borderColor={false} colorText={false}> Empezar a escribir </Boton>
-                </Accion>
-              </div>
-              <Ilustracion image={'./images/imageHome.png'} alt={'imageHistorias'} />
-            </ImagenesInfo>
+              <Accion>
+                <Boton href={'login'} backgroundColor={true} borderColor={false} colorText={false}> Empezar a escribir </Boton>
+              </Accion>
+            </div>
+            <Ilustracion image={'./images/imageHome.png'} alt={'imageHistorias'} />
+          </ImagenesInfo>
         </Container>
-        </Wrapper>
-        <Container>
-          <HrHome>
-            <Titulo>Inspirate</Titulo>
-            <Titulo>Escribí</Titulo>
-            <Titulo>Compartí</Titulo>
-          </HrHome>
-        </Container>
-        <Wrapper>
+      </Wrapper>
+      <Container>
+        <HrHome>
+          <Titulo>Inspirate</Titulo>
+          <Titulo>Escribí</Titulo>
+          <Titulo>Compartí</Titulo>
+        </HrHome>
+      </Container>
+      <Wrapper>
         <Container>
           <Espacio>
             <EspacioInfo>
@@ -55,6 +55,18 @@ function IndexContainer() {
               </div>
             </EspacioInfo>
           </Espacio>
+        </Container>
+        <Container>
+          <BotonDonar>
+            <h3>Podes colaborar para que esta comunidad de escritores continue inspirando al mundo</h3>
+            <p>*La donación es a trav&eacute;s de MercadoPago</p>
+            <a target='_blank'
+              mp-mode="dftl"
+              href="https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=493363169-9f36902c-d6b3-42db-b873-2305da7f3407"
+              name="MP-payButton">
+              Donar
+            </a>
+          </BotonDonar>
         </Container>
       </Wrapper>
     </ContainerMain>

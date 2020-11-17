@@ -5,12 +5,9 @@ export const ContainerMain = styled.main`
   width: 100%;
 `;
 export const Banner = styled.div`
-  background-color: ${leerColor(colores.amarilloDos)};
-  background-image: url('../images/bannerImagenes.png');
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: ${leerColor(colores.amarilloTres)};
   width: 100%;
-  height: 29vh;
+  height: 15vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,7 +16,7 @@ export const Banner = styled.div`
     font-family: 'Lora', serif;
     font-weight: 700;
     text-align: center;
-    width: 26%;
+    width: 50%;
   }
   @media (min-width: ${breakpoints.mobileGrande}) {
     
@@ -59,7 +56,7 @@ export const Accion = styled.div`
   flex-direction: row;
   justify-content: space-evenly;
   margin: 40px auto 20px;
-  width: 35%;
+  width: 100%;
 `;
 export const Imagenes = styled.div`
   width: 100%; 

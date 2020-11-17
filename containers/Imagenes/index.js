@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import Pagination from '@material-ui/lab/Pagination';
 
-import { ContainerMain, Banner, Container, Imagenes, Imagen, SeguirEscribiendo, Coleccion, Accion, Paginacion } from './styles';
-import { Wrapper, Titulo, Boton, Ilustracion, CardColeccionImages } from '../../components';
+import { firebase } from '../../lib';
+const firebaseDB = firebase.database();
 
-function ImagenesContainer() {
+import { ContainerMain, Banner, Container, Imagenes, SeguirEscribiendo, Coleccion, Accion, Paginacion } from './styles';
+import { Wrapper, Titulo, Boton, Ilustracion, CardColeccionImages, CardImagen } from '../../components';
+
+function ImagenesContainer({ user }) {
   // const [hasError, setErrors] = useState(false);
   const [images, setImages] = useState([]);
+
+  const { name: username } = user;
+  console.log("user: ", username)
 
   // Paginacion imagenes //
   const imageCant = 20;
@@ -38,6 +44,40 @@ function ImagenesContainer() {
     setCurrentPage(pageNumber);
   };
 
+  const initialStateImage = {
+    username: username,
+    urlImage: '',
+    tagsImage: '',
+  };
+  const [valuesImage, setValuesImage] = useState(initialStateImage);
+
+  const handleSubmit = async (largeImageURL, imageTags) => {
+    console.log("agrego imagen a la base")
+    console.log(largeImageURL, imageTags);
+    setValuesImage({ ...valuesImage, urlImage:largeImageURL, tagsImage:imageTags});
+    addImage(valuesImage);
+    console.log("DB: ", valuesImage);
+    // setValuesImage({ ...initialStateImage }); // para que al agregar datos, los input se limpien //
+  }
+
+  const addImage = async (req) => {
+    try {
+      //Agrego document en la collection de historias (usando firebase con async/await)
+      const responseKey = await firebaseDB.ref('imagenesMG').push({
+        username: req.username,
+        urlImage: req.urlImage,
+        tagsImage: req.tagsImage,
+      }).getKey()
+
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    setValuesImage({ ...initialStateImage});
+  }, [])
+
   return (
     <ContainerMain>
       <Banner>
@@ -50,14 +90,17 @@ function ImagenesContainer() {
             {
               images.map(img => {
                 return (
-                  <Imagen key={img.id}>
+                  <CardImagen key={img.id}>
                     <img src={img.largeImageURL} alt={img.tags} />
-                  </Imagen>
+                    <div>
+                      <button onClick={() => handleSubmit(img.largeImageURL, img.tags)}>Guardar imagen</button>
+                    </div>
+                  </CardImagen>
                 )
               })
             }
             {/* <span>Has Error: {hasError}</span> */}
-            
+
             <Paginacion>
               <Pagination
                 page={currentPage}

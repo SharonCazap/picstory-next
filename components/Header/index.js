@@ -33,7 +33,7 @@ function Header({ user, loading }) {
                   </li>
                   <div className={openMenuUser ? 'dropdown' : 'dropup'}>
                     <a href={'/mis-historias'}>Mis historias</a>
-                    <a href={'/'}>Mis im&aacute;genes</a>
+                    <a href={'/mis-imagenes'}>Mis im&aacute;genes</a>
                     <a href={'/configuracion'}>Configuraci&oacute;n</a>
                     <a href={'/api/logout'}>Cerrar sesi&oacute;n</a>
                   </div>

@@ -2,12 +2,12 @@ import React from "react";
 // import { jsxAttribute } from "@babel/types"
 import auth0 from '../lib/auth0';
 
-import { Layout, Imagenes as ImagenesContainer } from '../containers';
+import { Layout, MisImagenes as MisImagenesContainer } from '../containers';
 
-export default function Imagenes( {user} ) {
+export default function MisImagenes( {user} ) {
   return (
     <Layout>
-      <ImagenesContainer user={user} />
+      <MisImagenesContainer user={user} />
     </Layout>
   )
 }

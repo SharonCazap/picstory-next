@@ -76,7 +76,7 @@ function MisHistoriasContainer({ user }) {
                   // href={`historia/${miHistoria.id}`}
                 >
                   <figure>
-                    <img src={'./images/history01.jpg'} alt={'./images/history01.jpg'} />
+                    <img src={miHistoria.imagenPortada.largeImageURL} alt={miHistoria.imagenPortada.tags} />
                   </figure>
                   <div>
                     <h3>{miHistoria.titulo}</h3>
