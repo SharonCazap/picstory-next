@@ -154,13 +154,15 @@ function HomeContainer({ user }) {
                       <div>
                         <button onClick={() => onEditHistoria(miHistoria.id)} className='editButton'></button>
                       </div>
+                      <button onClick={() => onEditHistoria(miHistoria.id)} className='editButtonHome'>Continuar</button>
+
                     </div>
                   </CardContinuarHistoria>
                 ))
               }
-              <Accion>
+              {/* <Accion>
                 <Boton href={'continuar'} backgroundColor={false} borderColor={true} colorText={true}> Continuar </Boton>
-              </Accion>
+              </Accion> */}
             </SeguirEscribiendo>
           </ContinuarHistoria>
         </Container>

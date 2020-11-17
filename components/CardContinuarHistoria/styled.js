@@ -86,6 +86,19 @@ export const Card = styled.a`
       height: 15px;
       cursor: pointer;
     }
+    
+  }
+  button.editButtonHome{
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    width: fit-content;
+    padding: 10px 52px;
+    border-radius: 30px; 
+    background-color: transparent;
+    border: 2px solid ${leerColor(colores.rosa)};
+    color: ${leerColor(colores.rosa)};
   }
   @media (min-width: ${breakpoints.mobileGrande}) {
 
