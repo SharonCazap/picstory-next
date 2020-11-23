@@ -151,9 +151,9 @@ function HomeContainer({ user }) {
                     <div>
                       <h3>{miHistoria.titulo}</h3>
                       <p>{miHistoria.descripcion}</p>
-                      <div>
+                      {/* <div>
                         <button onClick={() => onEditHistoria(miHistoria.id)} className='editButton'></button>
-                      </div>
+                      </div> */}
                       <button onClick={() => onEditHistoria(miHistoria.id)} className='editButtonHome'>Continuar</button>
 
                     </div>

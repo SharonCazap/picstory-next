@@ -98,8 +98,24 @@ export const EnProceso = styled.div`
 `;
 export const Accion = styled.div` 
   display: flex;
-  flex-direction: row;
-  width: 45%;
-  justify-content: space-evenly;
-  margin: 50px auto 0;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px auto;
+  @media (min-width: ${breakpoints.mobileGrande}) {
+    
+  }
+  @media (min-width: ${breakpoints.tablet}) {
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 80%;
+  }
+  @media (min-width: ${breakpoints.laptop}) {
+    width: 60%;
+  }
+  @media (min-width: ${breakpoints.laptopL}) {
+    width: 35%;
+  }
+  @media (min-width: ${breakpoints.notebook}) {
+
+  }
 `;

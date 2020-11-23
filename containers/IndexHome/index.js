@@ -23,7 +23,7 @@ function IndexContainer() {
                   Compartí tu historia con la comunidad y leé todas las historias que las imagenes tienen para contar.
                 </p>
               <Accion>
-                <Boton href={'login'} backgroundColor={true} borderColor={false} colorText={false}> Empezar a escribir </Boton>
+                <Boton href={'api/login'} backgroundColor={true} borderColor={false} colorText={false}> Empezar a escribir </Boton>
               </Accion>
             </div>
             <Ilustracion image={'./images/imageHome.png'} alt={'imageHistorias'} />
@@ -50,7 +50,7 @@ function IndexContainer() {
                     Inspírate, escribe y comparte las maravillosas historias con la comunidad.
                   </p>
                 <Accion>
-                  <Boton href={'login'} backgroundColor={true} borderColor={false} colorText={false}> Empezar a escribir </Boton>
+                  <Boton href={'api/login'} backgroundColor={true} borderColor={false} colorText={false}> Empezar a escribir </Boton>
                 </Accion>
               </div>
             </EspacioInfo>
@@ -58,7 +58,8 @@ function IndexContainer() {
         </Container>
         <Container>
           <BotonDonar>
-            <h3>Podes colaborar para que esta comunidad de escritores continue inspirando al mundo</h3>
+            <h2>Aport&aacute; a la comunidad</h2>
+            <h3>¡Podes colaborar para que esta comunidad de escritores continue inspirando al mundo!</h3>
             <p>*La donación es a trav&eacute;s de MercadoPago</p>
             <a target='_blank'
               mp-mode="dftl"

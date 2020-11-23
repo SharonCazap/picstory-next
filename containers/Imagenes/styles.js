@@ -69,13 +69,6 @@ export const Imagenes = styled.div`
   flex-flow: row wrap; 
   justify-content: space-around;
 `;
-export const SeguirEscribiendo = styled.div` 
-  display: flex; 
-  flex-direction: column;
-  width: 60%;
-  flex-flow: row wrap;
-  justify-content: space-between;
-`;
 export const Coleccion = styled.div` 
   width: 100%; 
   display: flex; 
@@ -87,4 +80,54 @@ export const Coleccion = styled.div`
     width: 100%; 
     margin-bottom: 25px;
   }
+  div:first-of-type{
+    display: none;
+  }
+  @media (min-width: ${breakpoints.mobileGrande}) {
+    
+  }
+  @media (min-width: ${breakpoints.tablet}) {
+
+  }
+  @media (min-width: ${breakpoints.laptop}) {
+    
+  }
+  @media (min-width: ${breakpoints.laptopL}) {
+    div:first-of-type{
+      display: block;
+    }
+  }
+  @media (min-width: ${breakpoints.notebook}) {
+
+  }
 `; 
+export const SeguirEscribiendo = styled.div` 
+  display: flex; 
+  flex-direction: column;
+  width: 100%;
+  flex-flow: row wrap;
+  justify-content: center;
+  a div{
+    display: flex!important;
+  }
+  .accion-seguir{
+    display: flex!important;
+    flex-direction: column!important;
+    width: 60%;
+    align-items: center;
+  }
+  @media (min-width: ${breakpoints.mobileGrande}) {
+
+  }
+  @media (min-width: ${breakpoints.tablet}) {
+  }
+  @media (min-width: ${breakpoints.laptop}) {
+    justify-content: space-between; 
+  }
+  @media (min-width: ${breakpoints.laptopL}) {
+    width: 70%;
+  }
+  @media (min-width: ${breakpoints.notebook}) {
+    width: 60%;
+  }
+`;

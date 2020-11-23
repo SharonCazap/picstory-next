@@ -137,22 +137,23 @@ export const ImagenHome = styled.div`
   width: 170px;
   height: 170px;
   border-radius: 20px;
-  overflow: hidden;
+  overflow: hidden;  
+  margin: 10px;
   img{
     width: 100%;
     height: inherit;
     object-fit: cover;
   }
   @media (min-width: ${breakpoints.mobileGrande}) {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
   }
   @media (min-width: ${breakpoints.tablet}) {
-
-  }
-  @media (min-width: ${breakpoints.laptop}) {
     width: 200px;
     height: 200px; 
+  }
+  @media (min-width: ${breakpoints.laptop}) {
+    margin: 0;
   }
   @media (min-width: ${breakpoints.laptopL}) {
     width: 145px;

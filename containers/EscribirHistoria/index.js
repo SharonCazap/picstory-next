@@ -126,7 +126,7 @@ function EscribirHistoriaContainer(props) {
         <Container>
           <form onSubmit={handleSubmit} method='POST'>
             <Imagenes>
-              <h3>Elegí im&aacute;gen de portada</h3>
+              <h3>1. Elegí im&aacute;gen de portada</h3>
               {
                 images.map(img => {
                   return (
@@ -152,7 +152,7 @@ function EscribirHistoriaContainer(props) {
             </Imagenes>
             <FormContent>
               <EscribirInfo>
-                <h3>Titulo</h3>
+                <h3>2. Titulo</h3>
                 <Input
                   type='text'
                   name='titulo'
@@ -160,7 +160,7 @@ function EscribirHistoriaContainer(props) {
                   onChange={handleInputChange}
                   value={values.titulo}
                 />
-                <h3>G&eacute;nero</h3>
+                <h3>3. G&eacute;nero</h3>
                 <select
                   name='genero'
                   onChange={handleInputChange}
@@ -173,7 +173,7 @@ function EscribirHistoriaContainer(props) {
                   <option value="Ficci&oacute;n">Ficci&oacute;n</option>
                   <option value="Romance">Romance</option>
                 </select>
-                <h3>Descripci&oacute;n</h3>
+                <h3>4. Descripci&oacute;n</h3>
                 <textarea
                   name='descripcion'
                   placeholder='Descripci&oacute;n / Sinopsis de la historia'

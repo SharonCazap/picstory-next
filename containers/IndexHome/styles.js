@@ -31,18 +31,21 @@ export const Banner = styled.div`
     h1{
       font-size: 32px;
     }
-    width: 60%;
+    width: 90%;
     height: 12vh;
   }
   @media (min-width: ${breakpoints.laptopL}) {
     h1{
       font-size: 36px;
+      width: 100%;
     }
-    width: 50%;
+    width: 60%;
     height: 15vh;
   }
   @media (min-width: ${breakpoints.notebook}) {
-
+    h1{
+      width: 80%;
+    }
   }
 `;
 export const Container = styled.div` 
@@ -60,7 +63,7 @@ export const ImagenesInfo = styled.div`
   h2{
     display: block;
     width: 100%; 
-    font-size: 21px;
+    font-size: 18px;
     font-family: 'Lora', serif;
     font-weight: 700;
     color: ${leerColor(colores.violeta)};
@@ -74,6 +77,9 @@ export const ImagenesInfo = styled.div`
     font-size: 18px;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
+  }
+  figure{
+    margin: 40px 0; 
   }
   img{
     border-radius: 20px;
@@ -101,6 +107,7 @@ export const ImagenesInfo = styled.div`
       width: 50%;
       figure{
         padding: 0 5% 0;
+        margin: 0;
       }
     }
   }
@@ -180,7 +187,7 @@ export const EspacioInfo = styled.div`
   justify-content: space-between; 
   h2{
     width: 100%; 
-    font-size: 21px;
+    font-size: 18px;
     font-family: 'Lora', serif;
     font-weight: 700;
     color: ${leerColor(colores.violeta)};
@@ -234,10 +241,22 @@ export const BotonDonar = styled.div`
   width: 100%;
   align-items: center;
   margin: 40px 0 60px;
+  padding: 20px 0 60px;
+  border: 1px solid ${leerColor(colores.grisBlanco)};
+  background-color: ${leerColor(colores.grisBlanco)};
+  border-radius: 20px;
+  h2{
+    width: 100%; 
+    text-align: center;
+    font-size: 21px;
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    color: ${leerColor(colores.violeta)};
+  }
   h3{
     font-weight: 500;
     font-size: 18px;
-    width: 35%;
+    width: 90%;
     color: ${leerColor(colores.rosa)};
     text-align: center;
     margin-bottom: 0;
@@ -245,7 +264,7 @@ export const BotonDonar = styled.div`
   p{
     margin: 0;
     padding: 20px;
-    font-size: 16px;
+    font-size: 14px;
   }
   a{
     background-color: #009ee3;
@@ -264,25 +283,22 @@ export const BotonDonar = styled.div`
     
   }
   @media (min-width: ${breakpoints.tablet}) {
-    div:first-of-type{
-      width: 100%;
-      justify-content: center;
+    h3{
+      width: 70%;
     }
   }
   @media (min-width: ${breakpoints.laptop}) {
     h2{
       font-size: 28px;
     }
-    div:first-of-type{
-      width: 50%;
-      justify-content: center;
-    }
-    div:nth-child(3){
+    h3{
       width: 50%;
     }
   }
   @media (min-width: ${breakpoints.laptopL}) {
-    
+    h3{
+      width: 40%;
+    }
   }
   @media (min-width: ${breakpoints.notebook}) {
 

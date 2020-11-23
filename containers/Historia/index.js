@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { firebase } from '../../lib';
 const firebaseDB = firebase.database();
 
-import { ContainerMain, Banner, Container, Autor, AutorDatos, Historia, HistoriaTexto, Valorar, AutorDescripcion, AutorInfo, Accion } from './styles';
+import { ContainerMain, Banner, Container, Autor, AutorDatos, Historia, HistoriaImagen, HistoriaTexto, Valorar, AutorDescripcion, AutorInfo, Accion } from './styles';
 import { Wrapper, Boton } from '../../components';
 
 function HistoriaContainer(props) {
@@ -55,6 +55,9 @@ function HistoriaContainer(props) {
             </AutorDatos>
           </Autor>
           <Historia>
+            <HistoriaImagen>
+              <img src={values.imagenPortada.largeImageURL} alt={values.imagenPortada.tags}/>
+            </HistoriaImagen>
             <HistoriaTexto>
               <p>
                 {values.texto.replace("  ", "\n")}

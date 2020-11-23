@@ -70,8 +70,23 @@ export const Paginacion = styled.div`
 `;
 export const Accion = styled.div` 
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  width: 35%;
+  flex-direction: column;
+  align-items: center;
   margin: 40px auto;
+  @media (min-width: ${breakpoints.mobileGrande}) {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  @media (min-width: ${breakpoints.tablet}) {
+    width: 80%;
+  }
+  @media (min-width: ${breakpoints.laptop}) {
+    width: 60%;
+  }
+  @media (min-width: ${breakpoints.laptopL}) {
+    width: 35%;
+  }
+  @media (min-width: ${breakpoints.notebook}) {
+
+  }
 `;

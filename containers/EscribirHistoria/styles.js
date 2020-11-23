@@ -47,14 +47,29 @@ export const Container = styled.div`
 export const FormContent = styled.div` 
   display: flex;
   width: 100%;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
+  @media (min-width: ${breakpoints.mobileGrande}) {
+    
+  }
+  @media (min-width: ${breakpoints.tablet}) {
+    flex-direction: row;
+  }
+  @media (min-width: ${breakpoints.laptop}) {
+
+  }
+  @media (min-width: ${breakpoints.laptopL}) {
+    
+  }
+  @media (min-width: ${breakpoints.notebook}) {
+
+  }
 `;
 export const EscribirInfo = styled.div`
   display: flex;
   flex-direction: column;
   padding: 60px 0 0;
-  width: 30%;
+  width: 100%;
   h3{
     font-family: 'Lora', serif;
     font-size: 24px;
@@ -81,6 +96,21 @@ export const EscribirInfo = styled.div`
     resize: none;
     height: 260px;
   }
+  @media (min-width: ${breakpoints.mobileGrande}) {
+    
+  }
+  @media (min-width: ${breakpoints.tablet}) {
+    width: 30%;
+  }
+  @media (min-width: ${breakpoints.laptop}) {
+
+  }
+  @media (min-width: ${breakpoints.laptopL}) {
+    
+  }
+  @media (min-width: ${breakpoints.notebook}) {
+
+  }
 `;
 export const Input = styled.input`
   padding: 0.5em 0.7em;
@@ -101,7 +131,7 @@ export const EscribirHistoria = styled.div`
   display: flex;
   flex-direction: column;
   padding: 60px 0 0;
-  width: 55%;
+  width: 100%;
   textarea{
     padding: 0.5em 0.7em;
     margin: 0.5em 0;
@@ -118,6 +148,21 @@ export const EscribirHistoria = styled.div`
     ::placeholder{
       color: ${leerColor(colores.grisDos)};
     }
+  }
+  @media (min-width: ${breakpoints.mobileGrande}) {
+    
+  }
+  @media (min-width: ${breakpoints.tablet}) {
+    width: 55%;
+  }
+  @media (min-width: ${breakpoints.laptop}) {
+
+  }
+  @media (min-width: ${breakpoints.laptopL}) {
+    
+  }
+  @media (min-width: ${breakpoints.notebook}) {
+
   }
 `;
 export const Imagenes = styled.div` 

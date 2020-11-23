@@ -63,6 +63,7 @@ export const Card = styled.a`
     width: 100%!important;
     padding: 0 20px!important;
     margin-bottom: 20px!important;
+    margin-top: 0;
     justify-content: flex-end; 
     button.editButton {
       background-image: url('/images/edit.svg');
@@ -99,15 +100,18 @@ export const Card = styled.a`
     background-color: transparent;
     border: 2px solid ${leerColor(colores.rosa)};
     color: ${leerColor(colores.rosa)};
+    margin-bottom: -50px;
   }
   @media (min-width: ${breakpoints.mobileGrande}) {
 
   }
   @media (min-width: ${breakpoints.tablet}) {
-
+    
   }
   @media (min-width: ${breakpoints.laptop}) {
-
+    button.editButtonHome{
+      margin-bottom: -60px;
+    }
   }
   @media (min-width: ${breakpoints.laptopL}) {
     width: 425px;

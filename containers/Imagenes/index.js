@@ -137,9 +137,9 @@ function ImagenesContainer({ user }) {
                 image03={'./images/placeholderHistoria.png'}
                 coleccion={'Música'}
               />
-              <Accion>
+              {/* <Accion className="accion-seguir">
                 <Boton backgroundColor={false} borderColor={true} colorText={true}> Agregar </Boton>
-              </Accion>
+              </Accion> */}
             </SeguirEscribiendo>
           </Coleccion>
         </Container>
