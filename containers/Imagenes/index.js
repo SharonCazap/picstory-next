@@ -18,6 +18,7 @@ function ImagenesContainer({ user }) {
   const imageCant = 20;
   const [currentPage, setCurrentPage] = useState(1);
 
+  // Traigo las imagenes de la API // 
   const fetchImages = async (imageCant, pageNumber) => {
     await fetch(`https://pixabay.com/api/?key=6683953-b49e41bfa4dd17cb95038d82b&page=${pageNumber}&per_page=${imageCant}`)
       .then(res => res.json())
@@ -38,12 +39,14 @@ function ImagenesContainer({ user }) {
 
   // console.log("images " + images);
 
+  // Paginacion //
   const changePage = async (event, pageNumber) => {
     console.log("page actual: ", pageNumber)
     fetchImages(imageCant, pageNumber);
     setCurrentPage(pageNumber);
   };
 
+  // Guargar imagenes Me Gusta en la DB // 
   const initialStateImage = {
     username: username,
     urlImage: '',
@@ -54,7 +57,7 @@ function ImagenesContainer({ user }) {
   const handleSubmit = async (largeImageURL, imageTags) => {
     console.log("agrego imagen a la base")
     console.log(largeImageURL, imageTags);
-    setValuesImage({ ...valuesImage, urlImage:largeImageURL, tagsImage:imageTags});
+    setValuesImage({ ...valuesImage, urlImage: largeImageURL, tagsImage: imageTags });
     addImage(valuesImage);
     console.log("DB: ", valuesImage);
     // setValuesImage({ ...initialStateImage }); // para que al agregar datos, los input se limpien //
@@ -75,8 +78,29 @@ function ImagenesContainer({ user }) {
   };
 
   useEffect(() => {
-    setValuesImage({ ...initialStateImage});
-  }, [])
+    setValuesImage({ ...initialStateImage });
+  }, []);
+
+  // Traigo las imagenes que Me Gustan // 
+  const [misImagenes, setMisImagenes] = useState([]);
+
+  const getMisImagenes = async () => {
+    firebaseDB.ref('imagenesMG').orderByChild('username').equalTo(username).once('value', (snapshot) => {
+      const misImagenesArr = [];
+      snapshot.forEach((childSnapshot) => {
+        misImagenesArr.push({
+          id: childSnapshot.key,
+          ...childSnapshot.val()
+        })
+      })
+      // console.log("getMisImagenes: ", misImagenesArr);
+      setMisImagenes(misImagenesArr)
+    })
+  }
+
+  useEffect(() => {
+    getMisImagenes();
+  }, []);
 
   return (
     <ContainerMain>
@@ -100,7 +124,6 @@ function ImagenesContainer({ user }) {
               })
             }
             {/* <span>Has Error: {hasError}</span> */}
-
             <Paginacion>
               <Pagination
                 page={currentPage}
@@ -119,27 +142,24 @@ function ImagenesContainer({ user }) {
         <Container>
           <Coleccion>
             <Titulo>
-              Mi colecci&oacute;n
+              Mis im&aacute;genes
             </Titulo>
             <Ilustracion image={'./images/ilustracionColeccion.png'} />
             <SeguirEscribiendo>
-              <CardColeccionImages
-                href={'/'}
-                image01={'./images/placeholderHistoria.png'}
-                image02={'./images/placeholderHistoria.png'}
-                image03={'./images/placeholderHistoria.png'}
-                coleccion={'Paisajes'}
-              />
-              <CardColeccionImages
-                href={'/'}
-                image01={'./images/placeholderHistoria.png'}
-                image02={'./images/placeholderHistoria.png'}
-                image03={'./images/placeholderHistoria.png'}
-                coleccion={'Música'}
-              />
-              {/* <Accion className="accion-seguir">
-                <Boton backgroundColor={false} borderColor={true} colorText={true}> Agregar </Boton>
-              </Accion> */}
+              <CardColeccionImages>
+                {
+                  misImagenes.slice(0, 4).map(img => {
+                    return (
+                      <figure>
+                        <img src={img.urlImage} alt={img.tagsImage} />
+                      </figure>
+                    )
+                  })
+                }
+              </CardColeccionImages>
+              <Accion className="accion-seguir">
+                <Boton href={'mis-imagenes'} backgroundColor={false} borderColor={true} colorText={true}> Ver m&aacute;s </Boton>
+              </Accion>
             </SeguirEscribiendo>
           </Coleccion>
         </Container>

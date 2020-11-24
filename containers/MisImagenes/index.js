@@ -47,7 +47,6 @@ function MisImagenesContainer({ user }) {
                 return (
                   <CardImagen key={img.id}>
                     <img src={img.urlImage} alt={img.tagsImage} />
-                    
                   </CardImagen>
                 )
               })

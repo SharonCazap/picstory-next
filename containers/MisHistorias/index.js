@@ -94,8 +94,8 @@ function MisHistoriasContainer({ user }) {
         </Container>
         <Container>
           <Accion>
-            <Boton href={'lista-historias'} backgroundColor={true} borderColor={false} colorText={false}> Escribir </Boton>
-            <Boton href={'escribir'} backgroundColor={false} borderColor={true} colorText={true}> Volver a historias </Boton>
+            <Boton href={'historia/escribir'} backgroundColor={true} borderColor={false} colorText={false}> Escribir </Boton>
+            <Boton href={'lista-historias'} backgroundColor={false} borderColor={true} colorText={true}> Volver a historias </Boton>
           </Accion>
         </Container>
       </Wrapper>

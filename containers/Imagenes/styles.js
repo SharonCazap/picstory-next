@@ -105,16 +105,15 @@ export const SeguirEscribiendo = styled.div`
   display: flex; 
   flex-direction: column;
   width: 100%;
-  flex-flow: row wrap;
   justify-content: center;
+  align-items: center;
   a div{
     display: flex!important;
   }
   .accion-seguir{
+    text-align: center;
+    margin-bottom: 40px;
     display: flex!important;
-    flex-direction: column!important;
-    width: 60%;
-    align-items: center;
   }
   @media (min-width: ${breakpoints.mobileGrande}) {
 
