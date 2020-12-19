@@ -12,11 +12,11 @@ function MisHistoriasContainer({ user }) {
   // Traigo mis historias de la base de datos //
   const [misHistorias, setMisHistorias] = useState([]);
   
-  const { name: username } = user;
+  const { nickname: nickname } = user;
   // console.log("user: ", user)
 
   const getMisHistorias = async () => {
-    firebaseDB.ref('historias').orderByChild('username').equalTo(username).once('value', (snapshot) => {
+    firebaseDB.ref('historias').orderByChild('nickname').equalTo(nickname).once('value', (snapshot) => {
       const misHistoriasArr = [];
       snapshot.forEach((childSnapshot) => {
         misHistoriasArr.push({

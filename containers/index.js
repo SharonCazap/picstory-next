@@ -9,6 +9,9 @@ export { default as IndexHome } from './IndexHome';
 // -------------- HOME -------------- // 
 export { default as Home } from './Home';
 
+// -------------- ADMIN -------------- // 
+export { default as Admin } from './Admin';
+
 // -------------- LOGIN -------------- // 
 export { default as LogIn } from './LogIn';
 

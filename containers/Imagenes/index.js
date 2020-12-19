@@ -12,6 +12,7 @@ function ImagenesContainer({ user }) {
   const [images, setImages] = useState([]);
 
   const { name: username } = user;
+  const { nickname: nickname } = user;
   console.log("user: ", username)
 
   // Paginacion imagenes //
@@ -49,6 +50,7 @@ function ImagenesContainer({ user }) {
   // Guargar imagenes Me Gusta en la DB // 
   const initialStateImage = {
     username: username,
+    nickname: nickname,
     urlImage: '',
     tagsImage: '',
   };
@@ -68,6 +70,7 @@ function ImagenesContainer({ user }) {
       //Agrego document en la collection de historias (usando firebase con async/await)
       const responseKey = await firebaseDB.ref('imagenesMG').push({
         username: req.username,
+        nickname: req.nickname,
         urlImage: req.urlImage,
         tagsImage: req.tagsImage,
       }).getKey()
@@ -85,7 +88,7 @@ function ImagenesContainer({ user }) {
   const [misImagenes, setMisImagenes] = useState([]);
 
   const getMisImagenes = async () => {
-    firebaseDB.ref('imagenesMG').orderByChild('username').equalTo(username).once('value', (snapshot) => {
+    firebaseDB.ref('imagenesMG').orderByChild('nickname').equalTo(nickname).once('value', (snapshot) => {
       const misImagenesArr = [];
       snapshot.forEach((childSnapshot) => {
         misImagenesArr.push({

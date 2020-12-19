@@ -50,7 +50,7 @@ function HomeContainer({ user }) {
   const [misHistorias, setMisHistorias] = useState([]);
 
   const getMisHistorias = async () => {
-    firebaseDB.ref('historias').orderByChild('username').equalTo(username).once('value', (snapshot) => {
+    firebaseDB.ref('historias').orderByChild('nickname').equalTo(nickname).once('value', (snapshot) => {
       const misHistoriasArr = [];
       snapshot.forEach((childSnapshot) => {
         misHistoriasArr.push({

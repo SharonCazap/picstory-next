@@ -11,11 +11,11 @@ function MisImagenesContainer({ user }) {
   // Traigo mis historias de la base de datos //
   const [misImagenes, setMisImagenes] = useState([]);
   
-  const { name: username } = user;
+  const { nickname: nickname } = user;
   // console.log("user: ", user)
 
   const getMisImagenes = async () => {
-    firebaseDB.ref('imagenesMG').orderByChild('username').equalTo(username).once('value', (snapshot) => {
+    firebaseDB.ref('imagenesMG').orderByChild('nickname').equalTo(nickname).once('value', (snapshot) => {
       const misImagenesArr = [];
       snapshot.forEach((childSnapshot) => {
         misImagenesArr.push({

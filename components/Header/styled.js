@@ -34,6 +34,7 @@ export const Logo = styled.h1`
     
   }
   @media (min-width: ${breakpoints.laptop}) {
+    
   }
   @media (min-width: ${breakpoints.laptopL}) {
     
@@ -46,7 +47,6 @@ export const User = styled.div`
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: auto;
   -webkit-box-align: center;
   -ms-flex-align: center;
           align-items: center;
