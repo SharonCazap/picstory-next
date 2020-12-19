@@ -8,9 +8,15 @@ export const Banner = styled.div`
   background-color: ${leerColor(colores.lila3)};
   width: 100%;
   height: 15vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+          justify-content: center;
   h1{
     color: ${leerColor(colores.violeta)};
     font-family: 'Lora', serif;
@@ -35,24 +41,41 @@ export const Banner = styled.div`
   }
 `;
 export const Container = styled.div` 
+  display: -webkit-box; 
+  display: -ms-flexbox; 
   display: flex; 
-  flex-direction: row; 
+  -webkit-box-orient: horizontal; 
+  -webkit-box-direction: normal; 
+  -ms-flex-direction: row; 
+          flex-direction: row; 
   width: 100%;
   margin-bottom: 40px;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+          justify-content: space-between;
   form{
     width: 100%;
   }
 `;
 export const FormContent = styled.div` 
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
-  flex-direction: column;
-  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+          justify-content: space-between;
   @media (min-width: ${breakpoints.mobileGrande}) {
     
   }
   @media (min-width: ${breakpoints.tablet}) {
+    -webkit-box-orient: horizontal;    
+    -webkit-box-direction: normal;    
+    -ms-flex-direction: row;    
     flex-direction: row;
   }
   @media (min-width: ${breakpoints.laptop}) {
@@ -66,8 +89,13 @@ export const FormContent = styled.div`
   }
 `;
 export const EscribirInfo = styled.div`
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+          flex-direction: column;
   padding: 60px 0 0;
   width: 100%;
   h3{
@@ -75,7 +103,7 @@ export const EscribirInfo = styled.div`
     font-size: 24px;
     color: ${leerColor(colores.violeta)};
     font-weight: 700;
-    margin: 0 0 0.5em 0;;
+    margin: 0 0 0.5em 0;
   }
   select, textarea{
     padding: 0.5em 0.7em;
@@ -128,8 +156,13 @@ export const Input = styled.input`
   }
 `;
 export const EscribirHistoria = styled.div`
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+          flex-direction: column;
   padding: 60px 0 0;
   width: 100%;
   textarea{
@@ -166,11 +199,19 @@ export const EscribirHistoria = styled.div`
   }
 `;
 export const Imagenes = styled.div` 
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  flex-flow: row wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
   width: 100%;
-  justify-content: space-evenly;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   margin: 50px auto 0;
   h3{
     width: 100%;
@@ -178,14 +219,20 @@ export const Imagenes = styled.div`
     font-size: 24px;
     color: ${leerColor(colores.violeta)};
     font-weight: 700;
-    margin: 0 0 0.5em 0;;
+    margin: 0 0 0.5em 0;
   }
 `;
 export const CardImagen = styled.div` 
   text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex; 
-  flex-direction: column;
-  flex-flow: row wrap;
+  -webkit-box-orient: vertical; 
+  -webkit-box-direction: normal; 
+  -ms-flex-direction: column; 
+          flex-direction: column;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
   width: 100px;
   height: 150px;
   border-radius: 20px;     
@@ -197,14 +244,23 @@ export const CardImagen = styled.div`
   img{
     width: 100%;
     height: inherit;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     border-radius: 20px;
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
     transition: 0.2s;
   }
   div{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    flex-flow: row wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
     width: 100%;
   }
   div button {
@@ -233,9 +289,16 @@ export const CardImagen = styled.div`
   }
 `;
 export const Paginacion = styled.div` 
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+          justify-content: center;
   margin: 100px auto 10px;
   width: 100%;
   button.Mui-selected{
@@ -244,10 +307,17 @@ export const Paginacion = styled.div`
   }
 `;
 export const Accion = styled.div` 
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+          flex-direction: row;
   width: 45%;
-  justify-content: space-evenly;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   margin: 50px auto 0;
   button{
     cursor: pointer; 
@@ -255,6 +325,8 @@ export const Accion = styled.div`
     font-weight: 400;
     font-size: 16px;
     text-decoration: none;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     padding: 10px 52px;
     border-radius: 30px; 

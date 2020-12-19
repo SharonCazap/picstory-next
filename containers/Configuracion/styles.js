@@ -8,9 +8,15 @@ export const Banner = styled.div`
   background-color: ${leerColor(colores.naranjaTres)};
   width: 100%;
   height: 15vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+          justify-content: center;
   h1{
     color: ${leerColor(colores.violeta)};
     font-family: 'Lora', serif;
@@ -35,15 +41,27 @@ export const Banner = styled.div`
   }
 `;
 export const Container = styled.div` 
+  display: -webkit-box; 
+  display: -ms-flexbox; 
   display: flex; 
-  flex-direction: row; 
+  -webkit-box-orient: horizontal; 
+  -webkit-box-direction: normal; 
+  -ms-flex-direction: row; 
+          flex-direction: row; 
   width: 100%;
   margin-bottom: 40px;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+          justify-content: space-between;
 `;
 export const Configuracion = styled.div`
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+          flex-direction: column;
   padding: 60px 0 0;
   width: 30%;
   h3{
@@ -74,8 +92,13 @@ export const Configuracion = styled.div`
   }
 `;
 export const ConfiguracionInfo = styled.div`
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+          flex-direction: column;
   margin: 60px 0 0;
   padding: 0 40px 0;
   width: 100%;
@@ -86,24 +109,42 @@ export const ConfiguracionInfo = styled.div`
   }
 `;
 export const UserData = styled.div` 
+  display: -webkit-box; 
+  display: -ms-flexbox; 
   display: flex; 
-  flex-direction: column; 
+  -webkit-box-orient: vertical; 
+  -webkit-box-direction: normal; 
+  -ms-flex-direction: column; 
+          flex-direction: column; 
   width: 100%;
   margin-bottom: 40px; 
   div{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    flex-flow: row wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
     width: 100%;
     border-bottom: 1px solid ${leerColor(colores.gris)};
   }
   div h4{
     font-weight: 500;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+            justify-content: space-between;
     margin: 20px 0;
-    width: 45%;
+    width: 40%;
     color: ${leerColor(colores.violeta)};
   }
   div span{
@@ -111,11 +152,35 @@ export const UserData = styled.div`
     margin: 20px 0;
     width: 45%;
   }
+  @media (min-width: ${breakpoints.mobileGrande}) {
+    
+  }
+  @media (min-width: ${breakpoints.tablet}) {
+    div h4{
+      width: 45%;
+    }
+  }
+  @media (min-width: ${breakpoints.laptop}) {
+
+  }
+  @media (min-width: ${breakpoints.laptopL}) {
+    
+  }
+  @media (min-width: ${breakpoints.notebook}) {
+
+  }
 `;
 export const Accion = styled.div` 
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+          flex-direction: row;
   width: 45%;
-  justify-content: space-evenly;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   margin: 50px auto 0;
 `;

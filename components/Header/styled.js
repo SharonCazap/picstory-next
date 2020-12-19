@@ -5,11 +5,20 @@ export const HeaderContainer = styled.header`
   background-color: #fff;
 `;
 export const Container = styled.div`
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: inherit;
-  align-items: center;
-  flex-direction: row;
-  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+          justify-content: space-between;
   padding-top: 10px; 
   padding-bottom: 10px; 
 `;
@@ -34,16 +43,27 @@ export const Logo = styled.h1`
   }
 `;
 export const User = styled.div`
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: auto;
-  align-items: center;
-  justify-content: flex-end;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+          justify-content: flex-end;
   ul{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin: 0;
     padding: 0;
+    position: relative;
   }
   ul li{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 50px;
   }
@@ -51,18 +71,23 @@ export const User = styled.div`
     margin: 5px;
   }
   .dropdown{
-    display: flex;
     border-radius: 15px;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+            flex-direction: column;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     position: absolute;
-    top: 10%;
+    top: 100%;
     right: 11%;
     width: auto;
     z-index: 99;
     padding: 20px;
     background-color: ${leerColor(colores.blanco)};
-    box-shadow: 12px 12px 30px 0px rgba(177,178,180,0.2); 
+    -webkit-box-shadow: 12px 12px 30px 0px rgba(177,178,180,0.2);    
+    box-shadow: 12px 12px 30px 0px rgba(177,178,180,0.2);     
     color: ${leerColor(colores.gris)};
   }
   .dropup{
@@ -90,10 +115,16 @@ export const UserImage = styled.img`
 `;
 
 export const Accion = styled.div` 
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 70%;
-  align-items: center;
-  justify-content: flex-end; 
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+          justify-content: flex-end; 
   a{
     font-size: 14px;
     padding: 10px 30px;

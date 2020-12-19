@@ -11,9 +11,15 @@ export const Banner = styled.div`
   background-repeat: no-repeat;
   width: 100%;
   height: 29vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+          justify-content: center;
   h1{
     color: ${leerColor(colores.violeta)};
     font-family: 'Lora', serif;
@@ -38,29 +44,52 @@ export const Banner = styled.div`
   }
 `;
 export const Container = styled.div` 
+  display: -webkit-box; 
+  display: -ms-flexbox; 
   display: flex; 
-  flex-direction: column; 
-  justify-content: space-between;
+  -webkit-box-orient: vertical; 
+  -webkit-box-direction: normal; 
+  -ms-flex-direction: column; 
+          flex-direction: column; 
+  -webkit-box-pack: justify; 
+  -ms-flex-pack: justify; 
+          justify-content: space-between;
   width: 100%;
   margin-bottom: 40px;
 `;
 export const Historias = styled.div`
   width: 100%; 
   margin: 40px 0; 
+  display: -webkit-box; 
+  display: -ms-flexbox; 
   display: flex; 
-  flex-direction: column;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  align-items: baseline; 
+  -webkit-box-orient: vertical; 
+  -webkit-box-direction: normal; 
+  -ms-flex-direction: column; 
+          flex-direction: column;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+          align-items: baseline; 
   h2{
     width: 100%; 
     margin-bottom: 40px;
   }
 `;
 export const Paginacion = styled.div` 
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+          justify-content: center;
   margin: 20px auto 10px;
   width: 100%;
   button.Mui-selected{
@@ -69,13 +98,25 @@ export const Paginacion = styled.div`
   }
 `;
 export const Accion = styled.div` 
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+          align-items: center;
   margin: 40px auto;
   @media (min-width: ${breakpoints.mobileGrande}) {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
-    justify-content: space-evenly;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
   }
   @media (min-width: ${breakpoints.tablet}) {
     width: 80%;

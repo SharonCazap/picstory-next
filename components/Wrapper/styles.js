@@ -4,10 +4,17 @@ import { breakpoints } from '../../constants';
 export const WrapperContainer = styled.div`
   max-width: 350px;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin: 0 auto;
-  flex-direction: column;
-  justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+          justify-content: flex-start;
   @media (min-width: ${breakpoints.mobileGrande}) {
     max-width: 420px;
     width: 100%;

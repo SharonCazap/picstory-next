@@ -3,21 +3,38 @@ import { breakpoints, leerColor, colores } from '../../constants';
 
 export const Card = styled.section` 
   /* cursor: pointer; */
+  display: -webkit-box; 
+  display: -ms-flexbox; 
   display: flex; 
-  flex-direction: column; 
-  flex-flow: row wrap;
-  justify-content: space-evenly;
-  align-items: center;
+  -webkit-box-orient: vertical; 
+  -webkit-box-direction: normal; 
+  -ms-flex-direction: column; 
+          flex-direction: column; 
+  -ms-flex-flow: row wrap; 
+      flex-flow: row wrap;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   height: 200px;
   background-color: ${leerColor(colores.blanco)};
   border-radius: 20px; 
-  box-shadow: 12px 12px 30px 0px rgba(177,178,180,0.2); 
+  -webkit-box-shadow: 12px 12px 30px 0px rgba(177,178,180,0.2);  
+  box-shadow: 12px 12px 30px 0px rgba(177,178,180,0.2);   
   color: ${leerColor(colores.gris)};
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
   transition: 0.2s;
   margin-bottom: 20px;
   :hover{
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
     transform: scale(1.05);
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
     transition: 0.2s;
   }
   figure{
@@ -27,7 +44,8 @@ export const Card = styled.section`
     img{
       width: 100%;
       height: inherit;
-      object-fit: cover;
+      -o-object-fit: cover;
+         object-fit: cover;
       border-radius: 10px;
     }
   }

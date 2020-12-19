@@ -9,9 +9,15 @@ export const Banner = styled.div`
   background-image: none;
   width: 100%;
   height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+          justify-content: center;
   h1{
     color: ${leerColor(colores.violeta)};
     font-size: 21px;
@@ -49,9 +55,16 @@ export const Banner = styled.div`
   }
 `;
 export const Container = styled.div` 
+  display: -webkit-box; 
+  display: -ms-flexbox; 
   display: flex; 
-  flex-direction: column; 
-  justify-content: space-between;
+  -webkit-box-orient: vertical; 
+  -webkit-box-direction: normal; 
+  -ms-flex-direction: column; 
+          flex-direction: column; 
+  -webkit-box-pack: justify; 
+  -ms-flex-pack: justify; 
+          justify-content: space-between;
   width: 100%;
   @media (min-width: ${breakpoints.mobileGrande}) {
     
@@ -60,8 +73,13 @@ export const Container = styled.div`
 
   }
   @media (min-width: ${breakpoints.laptop}) {
+    -webkit-box-orient: horizontal; 
+    -webkit-box-direction: normal; 
+    -ms-flex-direction: row; 
     flex-direction: row; 
-    justify-content: space-between;
+    -webkit-box-pack: justify; 
+    -ms-flex-pack: justify; 
+        justify-content: space-between;
   }
   @media (min-width: ${breakpoints.laptopL}) {
 
@@ -73,11 +91,21 @@ export const Container = styled.div`
 export const Historias = styled.div`
   margin: 40px 0; 
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex; 
-  flex-direction: column;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: baseline; 
+  -webkit-box-orient: vertical; 
+  -webkit-box-direction: normal; 
+  -ms-flex-direction: column; 
+          flex-direction: column;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+          align-items: baseline; 
   h2{
     width: 100%; 
     margin-bottom: 40px;
@@ -99,19 +127,36 @@ export const Historias = styled.div`
   }
 `;
 export const Accion = styled.div` 
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   margin: 50px auto 0;
 `;
 export const Imagenes = styled.div`
   margin: 40px 0; 
+  display: -webkit-box; 
+  display: -ms-flexbox; 
   display: flex; 
   width: 100%;
-  flex-direction: column; 
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: baseline;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+          flex-direction: column; 
+  -ms-flex-flow: row wrap; 
+      flex-flow: row wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+          align-items: baseline;
   h2{
     width: 100%; 
     margin-bottom: 40px;
@@ -127,6 +172,8 @@ export const Imagenes = styled.div`
   }
   @media (min-width: ${breakpoints.laptopL}) {
     width: 25%;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
   }
   @media (min-width: ${breakpoints.notebook}) {
@@ -142,7 +189,8 @@ export const ImagenHome = styled.div`
   img{
     width: 100%;
     height: inherit;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   @media (min-width: ${breakpoints.mobileGrande}) {
     width: 150px;
@@ -166,11 +214,20 @@ export const ImagenHome = styled.div`
 `;
 export const ContinuarHistoria = styled.div` 
   width: 100%; 
+  display: -webkit-box; 
+  display: -ms-flexbox; 
   display: flex; 
-  flex-direction: column;
-  flex-flow: row wrap; 
-  justify-content: space-around;
-  align-items: center; 
+  -webkit-box-orient: vertical; 
+  -webkit-box-direction: normal; 
+  -ms-flex-direction: column; 
+          flex-direction: column;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap; 
+  -ms-flex-pack: distribute; 
+      justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+          align-items: center; 
   margin-bottom: 60px; 
   h2{
     width: 100%; 
@@ -192,6 +249,11 @@ export const ContinuarHistoria = styled.div`
   }
 `;
 export const SeguirEscribiendo = styled.div` 
+  display: -webkit-box; 
+  display: -ms-flexbox; 
   display: flex; 
-  flex-direction: column;
+  -webkit-box-orient: vertical; 
+  -webkit-box-direction: normal; 
+  -ms-flex-direction: column; 
+          flex-direction: column;
 `;

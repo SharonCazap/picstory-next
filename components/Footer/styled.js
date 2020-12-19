@@ -4,9 +4,14 @@ import { breakpoints, leerColor, colores } from '../../constants';
 export const Container = styled.footer`
   background-color: ${leerColor(colores.grisBlanco)};
   padding: 20px 0 20px;
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+          justify-content: space-between;
   h4{
     color: ${leerColor(colores.gris)};
     font-size: 16px;

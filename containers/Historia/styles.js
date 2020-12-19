@@ -8,9 +8,15 @@ export const Banner = styled.div`
   background-color: ${leerColor(colores.lila2)};
   width: 100%;
   height: 15vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+          justify-content: center;
   h1{
     color: ${leerColor(colores.violeta)};
     font-family: 'Lora', serif;
@@ -37,17 +43,28 @@ export const Banner = styled.div`
   }
 `;
 export const Container = styled.div` 
+  display: -webkit-box; 
+  display: -ms-flexbox; 
   display: flex; 
-  flex-direction: column; 
-  justify-content: space-between;
+  -webkit-box-orient: vertical; 
+  -webkit-box-direction: normal; 
+  -ms-flex-direction: column; 
+          flex-direction: column; 
+  -webkit-box-pack: justify; 
+  -ms-flex-pack: justify; 
+          justify-content: space-between;
   width: 100%;
   margin-bottom: 40px;
 `;
 export const Autor = styled.div`
   width: 100%; 
   margin: 40px 0; 
+  display: -webkit-box; 
+  display: -ms-flexbox; 
   display: flex; 
-  justify-content: center;
+  -webkit-box-pack: center; 
+  -ms-flex-pack: center; 
+          justify-content: center;
   figure{
     width: 75px;
     height: 75px;
@@ -60,9 +77,16 @@ export const Autor = styled.div`
   }
 `;
 export const AutorDatos = styled.div`
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column; 
-  justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+          flex-direction: column; 
+  -webkit-box-pack: space-evenly; 
+  -ms-flex-pack: space-evenly; 
+          justify-content: space-evenly;
   padding-left: 20px;
   h3{
     width: 100%; 
@@ -81,17 +105,29 @@ export const AutorDatos = styled.div`
   }
 `;
 export const Historia = styled.div`
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+          flex-direction: column;
   padding-bottom: 60px;
   border-bottom: 1px solid ${leerColor(colores.grisDos)};
 `;
 export const HistoriaImagen = styled.div`
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+          flex-direction: column;
   padding-bottom: 30px;
   img{
     width: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
   }
   @media (min-width: ${breakpoints.mobileGrande}) {
@@ -134,10 +170,17 @@ export const HistoriaTexto = styled.div`
   }
 `;
 export const Valorar = styled.div`
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
-  align-items: center;
-  flex-flow: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
+          flex-flow: column;
   hr{
     width: 185px;
     border: none;
@@ -152,10 +195,17 @@ export const Valorar = styled.div`
   }
 `;
 export const AutorDescripcion = styled.div`
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+          flex-direction: column;
   margin: 60px auto 45px;
-  align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+          align-items: center;
   img{
     width: 15%;
     border-radius: 50%;
@@ -165,7 +215,8 @@ export const AutorDescripcion = styled.div`
     
   }
   @media (min-width: ${breakpoints.tablet}) {
-    display: grid;
+    display: -ms-grid;    
+    display: grid;    
     grid-template-columns: 100px 450px 100px;
     margin: 60px auto 45px;
     justify-items: center;
@@ -184,8 +235,13 @@ export const AutorDescripcion = styled.div`
   }
 `;
 export const AutorInfo = styled.div`
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+          flex-direction: column;
   span{
     font-family: 'Lora', serif;
     font-weight: 400;
@@ -209,8 +265,15 @@ export const AutorInfo = styled.div`
   }
 `;
 export const Accion = styled.div` 
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   margin: 50px auto 0;
 `;

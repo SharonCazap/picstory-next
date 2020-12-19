@@ -7,6 +7,8 @@ export const BotonAccion = styled.a`
   font-weight: 400;
   font-size: 16px;
   text-decoration: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   padding: 10px 52px;
   border-radius: 30px; 
