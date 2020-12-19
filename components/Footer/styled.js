@@ -13,6 +13,13 @@ export const Container = styled.footer`
     font-weight: 300;
     margin: 12px 0;
   }
+  a{
+    color: ${leerColor(colores.violeta)};
+    font-weight: 400;
+  }
+  a:hover{
+    color: ${leerColor(colores.rosa)};
+  }
   @media (min-width: ${breakpoints.mobileGrande}) {
 
   }

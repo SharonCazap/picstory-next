@@ -36,15 +36,15 @@ function Header({ user, loading }) {
                       <a href={'/mis-historias'}>Mis historias</a>
                       <a href={'/mis-imagenes'}>Mis im&aacute;genes</a>
                       <a href={'/configuracion'}>Configuraci&oacute;n</a>
-                      <a href={'/api/logout'}>Cerrar sesi&oacute;n</a>
+                      <a href={'api/logout'}>Cerrar sesi&oacute;n</a>
                     </div>
                   </ul>
                 </User>
 
               ) : ( // No hay usuario logeado...
                 <Accion>
-                  <Boton href={'/api/login'} backgroundColor={false} borderColor={true} colorText={true}> Iniciar sesi&oacute;n </Boton>
-                  <Boton href={'/api/login'} backgroundColor={true} borderColor={true} colorText={false}> Registrarse </Boton>
+                  <Boton href={'api/login'} backgroundColor={false} borderColor={true} colorText={true}> Iniciar sesi&oacute;n </Boton>
+                  <Boton href={'api/login'} backgroundColor={true} borderColor={true} colorText={false}> Registrarse </Boton>
                 </Accion>
               )
             )
