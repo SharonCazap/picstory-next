@@ -94,16 +94,71 @@ export const User = styled.div`
     display: none;
   }
 `;
+export const Administrar = styled.span`
+  background-color: ${leerColor(colores.rosa)};
+  border-radius: 30px;
+  padding: 5px 15px;
+  margin: 0 10px;
+  cursor: pointer;
+  a{
+    text-decoration: none;  
+    color: ${leerColor(colores.blanco)};
+    font-size: 12px;
+  }
+  .hayAdmin{
+    display: block;
+  }
+  .noHayAdmin{
+    display: none;
+  }
+  @media (min-width: ${breakpoints.mobileGrande}) {
+    
+  }
+  @media (min-width: ${breakpoints.tablet}) {
+    padding: 10px 25px;
+    a{
+      font-size: 16px;
+    }
+  }
+  @media (min-width: ${breakpoints.laptop}) {
+    
+  }
+  @media (min-width: ${breakpoints.laptopL}) {
+    
+  }
+  @media (min-width: ${breakpoints.notebook}) {
+
+  }
+`;
 
 export const Write = styled.span`
   border: 2px solid ${leerColor(colores.rosa)};
   border-radius: 30px;
-  padding: 10px 25px;
+  padding: 5px 15px;
   margin: 0 10px;
   cursor: pointer;
   a{
     text-decoration: none;  
     color: ${leerColor(colores.rosa)};
+    font-size: 12px;
+  }
+  @media (min-width: ${breakpoints.mobileGrande}) {
+    
+  }
+  @media (min-width: ${breakpoints.tablet}) {
+    padding: 10px 25px;
+    a{
+      font-size: 16px;
+    }
+  }
+  @media (min-width: ${breakpoints.laptop}) {
+    
+  }
+  @media (min-width: ${breakpoints.laptopL}) {
+    
+  }
+  @media (min-width: ${breakpoints.notebook}) {
+
   }
 `;
 
@@ -112,6 +167,7 @@ export const UserImage = styled.img`
   border-radius: 50%;
   border: 3px solid ${leerColor(colores.rosa)};
   cursor: pointer;
+  height: auto;
 `;
 
 export const Accion = styled.div` 

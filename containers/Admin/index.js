@@ -89,7 +89,7 @@ function ListaHistoriasContainer({ user }) {
   return (
     <ContainerMain>
       <Banner>
-        <h1>Admin</h1>
+        <h1>Administrar historias</h1>
       </Banner>
       <Wrapper>
         <Container>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { HeaderContainer, Container, Logo, Accion, User, Write, UserImage } from './styled';
+import { HeaderContainer, Container, Logo, Accion, User, Write, Administrar, UserImage } from './styled';
 
 import { Wrapper, Boton } from '../../components';
 
@@ -8,12 +8,14 @@ function Header({ user, loading }) {
 
 
   const hayUserAdmin = () => {
-    const { nickname: nickname } = user;
-    console.log("user name: ", nickname)
-    if(nickname == "admin@picstory.com.ar"){
+    const { name: name } = user;
+    console.log("name: ", name)
+    if(name == "admin@picstory.com.ar"){
       console.log("es admin!")
+      return true;
     } else {
       console.log("no es admin")
+      return false;
     }
   }
   
@@ -37,8 +39,13 @@ function Header({ user, loading }) {
                   <Write>
                     <Link href={'/historia/escribir'}>
                       Escribir
-                  </Link>
+                    </Link>
                   </Write>
+                  <Administrar className={hayUserAdmin() ? 'hayAdmin' : 'noHayAdmin'}>
+                    <Link href={'/admin'}>
+                        Administrar
+                    </Link>
+                  </Administrar>
                   <ul>
                     <li onClick={() => setOpenMenuUser(!openMenuUser)}>
                       <UserImage src={user.picture} alt={user.username} />
