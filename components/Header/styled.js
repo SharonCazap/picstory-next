@@ -167,7 +167,7 @@ export const UserImage = styled.img`
   border-radius: 50%;
   border: 3px solid ${leerColor(colores.rosa)};
   cursor: pointer;
-  height: initial;
+  height: 50px;
 `;
 
 export const Accion = styled.div` 
