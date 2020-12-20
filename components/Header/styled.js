@@ -93,6 +93,12 @@ export const User = styled.div`
   .dropup{
     display: none;
   }
+  .hayAdmin{
+    display: block;
+  }
+  .noHayAdmin{
+    display: none;
+  }
 `;
 export const Administrar = styled.span`
   background-color: ${leerColor(colores.rosa)};
@@ -104,12 +110,6 @@ export const Administrar = styled.span`
     text-decoration: none;  
     color: ${leerColor(colores.blanco)};
     font-size: 12px;
-  }
-  .hayAdmin{
-    display: block;
-  }
-  .noHayAdmin{
-    display: none;
   }
   @media (min-width: ${breakpoints.mobileGrande}) {
     
@@ -167,7 +167,7 @@ export const UserImage = styled.img`
   border-radius: 50%;
   border: 3px solid ${leerColor(colores.rosa)};
   cursor: pointer;
-  height: auto;
+  height: initial;
 `;
 
 export const Accion = styled.div` 
