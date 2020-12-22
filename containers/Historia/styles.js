@@ -103,6 +103,12 @@ export const AutorDatos = styled.div`
     color: ${leerColor(colores.gris)};
     margin: 0;
   }
+  h6 img{
+    width: 12px;
+    border: none;
+    height: auto;
+    margin-right: 8px;
+  }
 `;
 export const Historia = styled.div`
   display: -webkit-box;

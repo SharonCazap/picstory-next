@@ -52,14 +52,15 @@ function ImagenesContainer({ user }) {
     username: username,
     nickname: nickname,
     urlImage: '',
-    tagsImage: '',
+    tagsImage: ''
   };
   const [valuesImage, setValuesImage] = useState(initialStateImage);
 
-  const handleSubmit = async (largeImageURL, imageTags) => {
-    console.log("agrego imagen a la base")
+  const handleSubmit = (largeImageURL, imageTags) => {
+    console.log("agrego imagen a la base");
     console.log(largeImageURL, imageTags);
     setValuesImage({ ...valuesImage, urlImage: largeImageURL, tagsImage: imageTags });
+    console.log(valuesImage);
     addImage(valuesImage);
     console.log("DB: ", valuesImage);
     // setValuesImage({ ...initialStateImage }); // para que al agregar datos, los input se limpien //
@@ -72,8 +73,8 @@ function ImagenesContainer({ user }) {
         username: req.username,
         nickname: req.nickname,
         urlImage: req.urlImage,
-        tagsImage: req.tagsImage,
-      }).getKey()
+        tagsImage: req.tagsImage
+      }).getKey();
 
     } catch (error) {
       console.error(error);
@@ -153,7 +154,7 @@ function ImagenesContainer({ user }) {
                 {
                   misImagenes.slice(0, 4).map(img => {
                     return (
-                      <figure>
+                      <figure key={img.id}>
                         <img src={img.urlImage} alt={img.tagsImage} />
                       </figure>
                     )

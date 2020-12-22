@@ -119,6 +119,21 @@ export const EnProceso = styled.div`
     width: 45%; 
     margin-bottom: 40px;
   }
+  a{
+    cursor: auto;
+  }
+  .leerHistoria{
+    cursor: pointer;
+    color: ${leerColor(colores.rosa)};
+    background-color: transparent;
+    border: none;
+    transition: 0.2s;
+  }
+  .leerHistoria:hover{
+    transform: scale(1.2);
+    font-weight: 600;
+    transition: 0.2s;
+  }
 `;
 export const Accion = styled.div` 
   display: -webkit-box;

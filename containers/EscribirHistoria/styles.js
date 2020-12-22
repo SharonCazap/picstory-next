@@ -272,6 +272,9 @@ export const CardImagen = styled.div`
     margin: 10px;
     cursor: pointer;
   }
+  .imgSeleccionada{
+    border: 2px solid ${leerColor(colores.rosa)};
+  }
   @media (min-width: ${breakpoints.mobileGrande}) {
 
   }
@@ -304,6 +307,41 @@ export const Paginacion = styled.div`
   button.Mui-selected{
     background-color: ${leerColor(colores.rosa)};
     color: ${leerColor(colores.blanco)};
+  }
+`;
+export const ImgSeleccionada = styled.div` 
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+          justify-content: center;
+          flex-flow: row wrap; 
+  margin: 100px auto 10px;
+  width: 100%;
+  button.Mui-selected{
+    background-color: ${leerColor(colores.rosa)};
+    color: ${leerColor(colores.blanco)};
+  }
+  h4{
+    width: 100%;
+    width: 100%;
+    font-family: 'Lora', serif;
+    font-size: 24px;
+    color: ${leerColor(colores.violeta)};
+    font-weight: 700;
+    margin: 0 0 0.5em 0;
+  }
+  img{
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border: 2px solid ${leerColor(colores.rosa)};
+    border-radius: 20px;
   }
 `;
 export const Accion = styled.div` 

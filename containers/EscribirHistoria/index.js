@@ -4,7 +4,7 @@ import Pagination from '@material-ui/lab/Pagination';
 import { firebase } from '../../lib';
 const firebaseDB = firebase.database();
 
-import { ContainerMain, Banner, Container, FormContent, EscribirInfo, Input, EscribirHistoria, Imagenes, CardImagen, Paginacion, Accion } from './styles';
+import { ContainerMain, Banner, Container, FormContent, EscribirInfo, Input, EscribirHistoria, Imagenes, CardImagen, Paginacion, ImgSeleccionada, Accion } from './styles';
 import { Wrapper, Boton } from '../../components';
 
 function EscribirHistoriaContainer(props) {
@@ -30,6 +30,7 @@ function EscribirHistoriaContainer(props) {
   const [values, setValues] = useState(initialStateValues);
 
   const [imagePortada, setImagePortada] = useState([]);
+  const [imgSeleccionada, setImgSeleccionada] = useState();
   const handleImageSubmit = (e, largeImageURL, tags) => {
     e.preventDefault();
     console.log("url: ", largeImageURL, " tags: ", tags);
@@ -39,6 +40,7 @@ function EscribirHistoriaContainer(props) {
     }
     setImagePortada(imagePortada);
     console.log(imagePortada);
+    setImgSeleccionada(true);
   }
 
   const tiempoLectura = Math.round(wordCount * 10 / 2500);
@@ -65,6 +67,7 @@ function EscribirHistoriaContainer(props) {
     console.log(values, wordCount);
     props.addOrEditHistoria(values, props.currentId);
     setValues({ ...initialStateValues }); // para que al agregar datos, los input se limpien //
+    window.location.href = "/mis-historias"; // una vez que escribió va a 'mis-historias' // 
   }
 
   const getHistoriaById = async (id) => {
@@ -115,8 +118,6 @@ function EscribirHistoriaContainer(props) {
     setCurrentPage(pageNumber);
   };
 
-
-
   return (
     <ContainerMain>
       <Banner>
@@ -138,6 +139,16 @@ function EscribirHistoriaContainer(props) {
                     </CardImagen>
                   )
                 })
+              }
+              {
+                imgSeleccionada ? 
+                  (
+                    <ImgSeleccionada>
+                      <h4>Imágen seleccionada: </h4>
+                      <img src={imagePortada.largeImageURL}/>
+                    </ImgSeleccionada>
+                  ) 
+                  : ''
               }
               {/* <span>Has Error: {hasError}</span> */}
 

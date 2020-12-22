@@ -94,6 +94,11 @@ export const Card = styled.a`
       width: 30%;
       text-align: right;
     }
+    span img{
+      width: 12px;
+      height: auto;
+      margin-right: 8px;
+    }
   }
   @media (min-width: ${breakpoints.mobileGrande}) {
 

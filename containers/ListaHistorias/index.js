@@ -92,7 +92,7 @@ function ListaHistoriasContainer({ user }) {
                     <p>{historia.descripcion}</p>
                     <div>
                       <span>{historia.nickname}</span>
-                      <span>{historia.tiempoLectura} mins</span>
+                      <span><img src="/images/clock.svg" alt="clock"/> {historia.tiempoLectura} mins</span>
                     </div>
                   </div>
                 </CardLeerHistoria>

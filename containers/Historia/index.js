@@ -55,7 +55,7 @@ function HistoriaContainer(props) {
             </figure>
             <AutorDatos>
               <h3>{values.nickname}</h3>
-              <h6><span>{values.tiempoLectura}</span> mins</h6>
+              <h6><span><img src="/images/clock.svg" alt="clock"/> {values.tiempoLectura}</span> mins</h6>
             </AutorDatos>
           </Autor>
           <Historia>
@@ -85,7 +85,7 @@ function HistoriaContainer(props) {
             {/* Estrellas */}
           </AutorDescripcion>
           <Accion>
-            <Boton href={'lista-historias'} backgroundColor={false} borderColor={true} colorText={true}> Volver a historias </Boton>
+            <Boton href={'/lista-historias'} backgroundColor={false} borderColor={true} colorText={true}> Volver a historias </Boton>
           </Accion>
         </Container>
       </Wrapper>

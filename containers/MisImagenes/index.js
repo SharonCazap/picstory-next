@@ -33,6 +33,14 @@ function MisImagenesContainer({ user }) {
     getMisImagenes();
   }, []);
 
+  const onDeleteImage = async (id) => {
+    if (window.confirm("¿Estas seguro que quieres elminiar esta imagen de tu colección?")) {
+      await firebaseDB.ref(`imagenesMG/${id}`).remove();
+      console.log("La imagen que elimino es la: ", id);
+      getMisImagenes(); // Refrezco la página para ver las historias actualizadas una vez que se elimina //
+    }
+  }
+
   return (
     <ContainerMain>
       <Banner>
@@ -47,6 +55,7 @@ function MisImagenesContainer({ user }) {
                 return (
                   <CardImagen key={img.id}>
                     <img src={img.urlImage} alt={img.tagsImage} />
+                    <button onClick={() => onDeleteImage(img.id)} className='deleteButton'>Eliminar imagen</button>
                   </CardImagen>
                 )
               })

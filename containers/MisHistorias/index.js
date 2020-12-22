@@ -24,7 +24,7 @@ function MisHistoriasContainer({ user }) {
           ...childSnapshot.val()
         })
       })
-      // historiasArr.reverse()
+      misHistoriasArr.reverse()
       // console.log("getMisHistorias: ", misHistoriasArr);
       setMisHistorias(misHistoriasArr)
     })
@@ -46,6 +46,12 @@ function MisHistoriasContainer({ user }) {
   const onEditHistoria = (id) => {
     router.push({
       pathname: `historia/editar/${id}`,
+      query: { pid: id },
+    })
+  }
+  const onViewHistoria = (id) => {
+    router.push({
+      pathname: `historia/${id}`,
       query: { pid: id },
     })
   }
@@ -82,6 +88,7 @@ function MisHistoriasContainer({ user }) {
                     <h3>{miHistoria.titulo}</h3>
                     <p>{miHistoria.descripcion}</p>
                     <div>
+                      <button onClick={() => onViewHistoria(miHistoria.id)} className='leerHistoria'>Leer</button>
                       <button onClick={() => onEditHistoria(miHistoria.id)} className='editButton'></button>
                       <button onClick={() => onDeleteHistoria(miHistoria.id)} className='deleteButton'></button>
                     </div>

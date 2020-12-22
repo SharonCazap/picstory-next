@@ -99,6 +99,15 @@ export const Imagenes = styled.div`
       flex-flow: row wrap; 
   -ms-flex-pack: distribute; 
       justify-content: space-around;
+  .deleteButton{
+    border-radius: 20px;
+    border: 2px solid ${leerColor(colores.rosa)};
+    background-color: transparent;
+    color: ${leerColor(colores.rosa)};
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+  }
 `;
 export const SeguirEscribiendo = styled.div` 
   display: -webkit-box; 
