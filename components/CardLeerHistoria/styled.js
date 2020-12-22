@@ -12,7 +12,7 @@ export const Card = styled.a`
   -ms-flex-direction: row; 
           flex-direction: row; 
   width: 100%;
-  height: 220px;
+  height: 240px;
   background-color: ${leerColor(colores.blanco)};
   border-radius: 20px; 
   -webkit-box-shadow: 12px 12px 30px 0px rgba(177,178,180,0.2); 
