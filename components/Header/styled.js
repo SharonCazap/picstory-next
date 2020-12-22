@@ -82,7 +82,7 @@ export const User = styled.div`
     position: absolute;
     top: 100%;
     right: 11%;
-    width: auto;
+    width: max-content;
     z-index: 99;
     padding: 20px;
     background-color: ${leerColor(colores.blanco)};
